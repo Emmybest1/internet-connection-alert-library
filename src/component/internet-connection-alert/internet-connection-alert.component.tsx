@@ -14,7 +14,7 @@ const InternetConnectionAlert: React.FC<Props> = ({headingText, bodyText, button
   /***************
    *@function interinternetDisconnectedHandler this event handler gets invoke when an internet is disconnect
    ***************/
-  const internetDisconnectedHandler = (): void => {
+  const internetDisconnectedHandler: () => void = (): void => {
     setIsInternetDisconnected(true);
   };
 
@@ -29,7 +29,7 @@ const InternetConnectionAlert: React.FC<Props> = ({headingText, bodyText, button
   /***************
    *@function interinternetConnectedHandler this event handler gets invoke when an internet is connected
    ***************/
-  const internetConnectedHandler = (): void => {
+  const internetConnectedHandler: () => void = (): void => {
     setIsInternetDisconnected(false);
   };
 
@@ -62,7 +62,7 @@ const InternetConnectionAlert: React.FC<Props> = ({headingText, bodyText, button
               {bodyText ? bodyText : "Sorry we can't continue, you seems to have gone offline.Try reconnecting."}
             </p>
             <button data-test="close-button" onClick={() => setShouldCloseAlert(true)}>
-              {bodyText ? bodyText : 'Close'}
+              {buttonText ? buttonText : 'Close'}
             </button>
           </div>
         )}
