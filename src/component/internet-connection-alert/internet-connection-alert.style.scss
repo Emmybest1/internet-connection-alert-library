@@ -1,0 +1,63 @@
+/********************
+ *@general styling
+ ********************/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rancho', cursive;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+/*******************
+ *@layout styling
+ *******************/
+.internet-alert-container {
+  background-color: #ffa500;
+  border: solid 3px #eee;
+  border-radius: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 200px;
+  height: 300px;
+
+  & * {
+    padding: 10px 0;
+  }
+  & img {
+    width: 30px;
+    margin: 0 auto;
+  }
+
+  & button {
+    border: solid 2px #eee;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #ffe1ab;
+    }
+  }
+
+  & .internet-failure-img__resource {
+    display: none;
+  }
+}
