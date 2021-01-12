@@ -6,8 +6,18 @@ type Props = {
   headingText?: string;
   bodyText?: string;
   buttonText?: string;
+  width?: string;
+  backgroundColor?: string;
+  color?: string;
 };
-const InternetConnectionAlert: React.FC<Props> = ({headingText, bodyText, buttonText}): JSX.Element => {
+const InternetConnectionAlert: React.FC<Props> = ({
+  headingText,
+  bodyText,
+  buttonText,
+  width,
+  backgroundColor,
+  color,
+}): JSX.Element => {
   const [isInternetDisconnected, setIsInternetDisconnected] = useState<boolean>(false);
   const [shouldCloseAlert, setShouldCloseAlert] = useState<boolean>(false);
 
@@ -45,7 +55,19 @@ const InternetConnectionAlert: React.FC<Props> = ({headingText, bodyText, button
     <ModalPortlet>
       <>
         {isInternetDisconnected && !shouldCloseAlert && (
-          <div role="alertdialog" aria-modal="true" className="internet-alert-container" aria-live="assertive">
+          <div
+            role="alertdialog"
+            aria-modal="true"
+            className="internet-alert-container"
+            aria-live="assertive"
+            style={{
+              width: !/((%)|(px)|(rem)|(em)|(ex)|(ch)|(vh)|(vw)|(vmin)|(vmax))$/.test(width ?? '')
+                ? width + 'px'
+                : width,
+              background: backgroundColor,
+              color,
+            }}
+          >
             <figure>
               <img
                 data-test="internet-failure-img"
