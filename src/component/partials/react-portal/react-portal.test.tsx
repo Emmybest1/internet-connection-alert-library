@@ -1,15 +1,15 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
-import ModalPortlet from './modal-portlet.component';
-import '../../setupTests';
+import ReactPortal from './react-portal.component';
+import '../../../setupTests';
 
 describe('ModalPortlet component unit test', () => {
   let wrapper: ShallowWrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ModalPortlet>
+      <ReactPortal>
         <h2 className="heading">Internet Connection Error!</h2>
-      </ModalPortlet>
+      </ReactPortal>
     );
   });
   it('should test the JSX children passed to it', () => {

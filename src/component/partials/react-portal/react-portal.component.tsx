@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import './modal-portlet.style.scss';
+import './react-portal.style.scss';
 
 const modalRoot = document.getElementById('modal-root') as HTMLDivElement;
 
-type Props = {
+type ReactPortalProps = {
   children: JSX.Element;
 };
 
-const ModalPortlet: React.FC<Props> = ({children}): JSX.Element => {
+const ReactPortal: React.FC<ReactPortalProps> = ({children}): JSX.Element => {
   const divContainer = window.document.createElement('div');
   divContainer.setAttribute('class', 'modal-container');
 
@@ -29,4 +29,4 @@ const ModalPortlet: React.FC<Props> = ({children}): JSX.Element => {
   return <>{ReactDOM.createPortal(children, divContainer)}</>;
 };
 
-export default ModalPortlet;
+export default ReactPortal;

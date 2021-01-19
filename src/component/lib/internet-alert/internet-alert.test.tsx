@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
-import InternetConnectionAlert from './internet-connection-alert.component';
+import InternetConnectionAlert from './internet-alert.lib';
 
 describe('InternetConnectionAlert component Unit test', () => {
   let wrapper: ShallowWrapper;

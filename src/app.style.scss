@@ -1,0 +1,38 @@
+/********************
+ *@general styling
+ ********************/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rancho', cursive;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
+  cursor: pointer;
+}
+
+.container {
+  padding: 10px 20px;
+}
+
+@mixin d-flex($fDirection, $jContent, $jItems, $fWrap) {
+  display: flex;
+  flex-direction: $fDirection;
+  justify-content: $jContent;
+  justify-items: $jItems;
+  flex-wrap: $fWrap;
+}

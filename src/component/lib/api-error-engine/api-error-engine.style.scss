@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto:wght@300&display=swap');
+
+.api-error-engine-container {
+  background-image: linear-gradient(to right top, #333, #1b1c2b, #4a3143);
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  margin: 0 auto;
+  min-height: 150px;
+  width: 80%;
+  max-width: 600px;
+
+  & *:no-button(button) {
+    padding-bottom: 20px;
+  }
+
+  & .api-error-heading {
+    color: #fff;
+    font-size: 0.9em;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  & .api-error-symbol {
+    background-color: #ff6a97;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 5px 10px;
+  }
+
+  & .api-error-message {
+    color: rgb(207, 206, 206);
+    font-size: 0.8em;
+  }
+
+  & .btn-wrapper {
+    display: flex;
+    justify-content: center;
+
+    & button {
+      background-color: #2d3044;
+      border: 0;
+      border-radius: 5px;
+      color: #fff;
+      margin: 0 20px;
+      padding: 7px 20px;
+    }
+  }
+
+  & .row {
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+
+  .pl-20 {
+    padding-left: 20px;
+  }
+
+  .pb-20 {
+    padding-bottom: 20px;
+  }
+}
+
+/*design reference:https://dribbble.com/shots/13926356-Upload-UI*/

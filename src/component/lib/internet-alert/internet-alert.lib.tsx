@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import ModalPortlet from '../react-portal/modal-portlet.component';
-import './internet-connection-alert.style.scss';
+import ModalPortlet from '../../partials/react-portal/react-portal.component';
+import './internet-alert.style.scss';
 
-type Props = {
+type InternetAlertProps = {
   headingText?: string;
   bodyText?: string;
   buttonText?: string;
@@ -10,7 +10,7 @@ type Props = {
   backgroundColor?: string;
   color?: string;
 };
-const InternetConnectionAlert: React.FC<Props> = ({
+export const InternetAlert: React.FC<InternetAlertProps> = ({
   headingText,
   bodyText,
   buttonText,
@@ -93,4 +93,4 @@ const InternetConnectionAlert: React.FC<Props> = ({
   );
 };
 
-export default InternetConnectionAlert;
+export default InternetAlert;
