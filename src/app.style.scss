@@ -1,6 +1,8 @@
-/********************
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto:wght@300&display=swap');
+
+/***************************
  *@general styling
- ********************/
+ ***************************/
 *,
 *::after,
 *::before {
@@ -10,7 +12,7 @@
 }
 
 body {
-  font-family: 'Rancho', cursive;
+  font-family: 'Roboto', sans-serif;
 }
 
 img {
@@ -73,4 +75,42 @@ button,
   justify-content: $jContent;
   justify-items: $jItems;
   flex-wrap: $fWrap;
+}
+
+/**************************
+ *@loader lib styling
+ **************************/
+.loader-container {
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  & * {
+    margin: 0 auto;
+  }
+
+  & img {
+    width: 50px;
+    max-width: 50px;
+  }
+}
+
+.loader-centered {
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+.loader-top {
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+.finish-p {
+  color: #333;
+  font-size: 0.8em;
+  font-weight: 900;
+  text-align: center;
 }
