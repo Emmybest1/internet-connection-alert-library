@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ModalPortlet from '../../partials/react-portal/react-portal.component';
+import {ModalPosition} from '../../../react-app-env';
 import './internet-alert.style.scss';
 
 type InternetAlertProps = {
@@ -9,6 +10,7 @@ type InternetAlertProps = {
   width?: string;
   backgroundColor?: string;
   color?: string;
+  modalPosition?: ModalPosition.top | ModalPosition.bottom | ModalPosition.right | ModalPosition.left;
 };
 export const InternetAlert: React.FC<InternetAlertProps> = ({
   headingText,
@@ -17,6 +19,7 @@ export const InternetAlert: React.FC<InternetAlertProps> = ({
   width,
   backgroundColor,
   color,
+  modalPosition,
 }): JSX.Element => {
   const [isInternetDisconnected, setIsInternetDisconnected] = useState<boolean>(false);
   const [shouldCloseAlert, setShouldCloseAlert] = useState<boolean>(false);
@@ -58,7 +61,7 @@ export const InternetAlert: React.FC<InternetAlertProps> = ({
           <div
             role="alertdialog"
             aria-modal="true"
-            className="internet-alert-container"
+            className={`internet-alert-container modal-${modalPosition ? modalPosition : 'top'}`}
             aria-live="assertive"
             style={{
               width: !/((%)|(px)|(rem)|(em)|(ex)|(ch)|(vh)|(vw)|(vmin)|(vmax))$/.test(width ?? '')

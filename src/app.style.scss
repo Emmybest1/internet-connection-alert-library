@@ -29,6 +29,44 @@ button,
   padding: 10px 20px;
 }
 
+.modal-top {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+
+.modal-top-right {
+  position: fixed;
+  top: 0;
+  right: 20px;
+}
+
+.modal-top-left {
+  position: fixed;
+  top: 0;
+  left: 20px;
+}
+
+.modal-bottom {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.modal-bottom-right {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+}
+
+.modal-bottom-left {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+}
+
 @mixin d-flex($fDirection, $jContent, $jItems, $fWrap) {
   display: flex;
   flex-direction: $fDirection;

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto:wght@300&display=swap');
 
-.api-error-engine-container {
-  background-image: linear-gradient(to right top, #333, #1b1c2b, #4a3143);
+.api-engine-container {
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
@@ -14,14 +13,14 @@
     padding-bottom: 20px;
   }
 
-  & .api-error-heading {
+  & .api-heading {
     color: #fff;
     font-size: 0.9em;
     padding-left: 10px;
     text-align: center;
   }
 
-  & .api-error-symbol {
+  & .api-symbol {
     background-color: #ff6a97;
     border-radius: 50%;
     width: 30px;
@@ -29,7 +28,7 @@
     padding: 5px 10px;
   }
 
-  & .api-error-message {
+  & .api-message {
     color: rgb(207, 206, 206);
     font-size: 0.8em;
   }
@@ -44,7 +43,7 @@
       border-radius: 5px;
       color: #fff;
       margin: 0 20px;
-      padding: 7px 20px;
+      padding: 10px 20px;
     }
   }
 
@@ -63,4 +62,19 @@
   }
 }
 
+.api-error-engine-container {
+  background-image: linear-gradient(to right top, #333, #1b1c2b, #4a3143);
+}
+
+.api-success-engine-container {
+  background-image: linear-gradient(to right top, #333, #1b1c2b, #2b4747);
+
+  & .api-symbol {
+    background-color: #2ce999;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
 /*design reference:https://dribbble.com/shots/13926356-Upload-UI*/
