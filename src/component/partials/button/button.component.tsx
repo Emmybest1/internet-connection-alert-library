@@ -12,10 +12,11 @@ enum ButtonClassName {
   warning = 'warning',
   success = 'success',
 }
+
 type ButtonProps = {
   buttonText: string;
-  buttonBgColor?: string;
-  buttonTxtColor?: string;
+  buttonBackgroundColor?: string;
+  buttonTextColor?: string;
   buttonType?: ButtonTypes.button | ButtonTypes.submit | ButtonTypes.reset;
   buttonDisable?: boolean;
   buttonImgSrc?: string;
@@ -30,8 +31,8 @@ type ButtonProps = {
 
 export const Button: React.FC<ButtonProps> = ({
   buttonText,
-  buttonBgColor,
-  buttonTxtColor,
+  buttonBackgroundColor,
+  buttonTextColor,
   buttonType,
   buttonDisable,
   buttonImgSrc,
@@ -49,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
       <button
         type={buttonType ? buttonType : 'button'}
         disabled={buttonDisable ? true : false}
-        style={{backgroundColor: buttonBgColor, color: buttonTxtColor, fontFamily}}
+        style={{backgroundColor: buttonBackgroundColor, color: buttonTextColor, fontFamily}}
         className={`react-ui-button ${className}`}
         onClick={onClick}
       >

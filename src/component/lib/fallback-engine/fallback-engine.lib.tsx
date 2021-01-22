@@ -7,7 +7,7 @@ import './fallback-engine.style.scss';
 interface IFallBackEngineProps extends IBaseComponentsProps {
   heading?: JSX.Element;
   textToDisplay: string;
-  btnText: string;
+  buttonText: string;
   fallBackPath: string;
 }
 
@@ -15,19 +15,19 @@ export const FallBackEngine: React.FC<IFallBackEngineProps> = ({
   heading,
   textToDisplay,
   fallBackPath,
-  btnText,
-  btnBgColor,
-  btnTxtColor,
-  bgColor,
-  txtColor,
+  buttonText,
+  backgroundColor,
+  contentTextColor,
+  buttonBackgroundColor,
+  buttonTextColor,
 }): JSX.Element => {
   const history = useHistory();
 
   return (
     <main
       style={{
-        backgroundColor: bgColor,
-        color: txtColor,
+        backgroundColor: backgroundColor,
+        color: contentTextColor,
       }}
       className="fallback-main"
     >
@@ -36,10 +36,10 @@ export const FallBackEngine: React.FC<IFallBackEngineProps> = ({
 
       <p>{textToDisplay}</p>
       <Button
-        buttonText={btnText}
-        buttonTxtColor={btnTxtColor}
-        buttonBgColor={btnBgColor}
-        onClick={() => history.push(fallBackPath)}
+        buttonText={buttonText}
+        buttonTextColor={buttonTextColor}
+        buttonBackgroundColor={buttonBackgroundColor}
+        onClick={() => history.replace(fallBackPath)}
       />
     </main>
   );

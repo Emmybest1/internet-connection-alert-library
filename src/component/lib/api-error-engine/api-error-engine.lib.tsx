@@ -10,10 +10,10 @@ export const ApiErrorEngine: React.FC<APIEngineProps> = ({
   shouldShowModal,
   fontFamily,
   retryFunc,
-  bgColor,
-  txtColor,
-  btnBgColor,
-  btnTxtColor,
+  backgroundColor,
+  contentTextColor,
+  buttonBackgroundColor,
+  buttonTextColor,
   modalPosition,
 }): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(() => shouldShowModal ?? false);
@@ -26,7 +26,7 @@ export const ApiErrorEngine: React.FC<APIEngineProps> = ({
             role="alert"
             aria-live="assertive"
             aria-labelledby="apiErrHeading"
-            style={{backgroundColor: bgColor, color: txtColor, fontFamily}}
+            style={{backgroundColor: backgroundColor, color: contentTextColor, fontFamily}}
           >
             <h4 id="apiErrHeading" className="api-heading pb-20">
               {heading ? heading : 'API Error'}
@@ -35,7 +35,7 @@ export const ApiErrorEngine: React.FC<APIEngineProps> = ({
               <p className="api-symbol">X</p>
               <p className="api-message pl-20">{message}</p>
             </span>
-            <div className="btn-wrapper" style={{color: btnTxtColor}}>
+            <div className="btn-wrapper" style={{color: buttonTextColor}}>
               <Button buttonText="Retry" onClick={retryFunc} />
               <Button
                 buttonText="Close"

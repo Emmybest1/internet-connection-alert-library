@@ -12,12 +12,11 @@ export const ProtectedRoute: React.FC<IProtectedRouteProps> = (props): JSX.Eleme
       {props.shouldRender ? (
         <Route {...props} component={props.component} />
       ) : (
-        // <Redirect to={{pathname: props.fallBackPath}} />
         <FallBackEngine
           textToDisplay="Sorry you don't have access to this page"
           heading={<h3>Unathorised User</h3>}
           fallBackPath={props.fallBackPath}
-          btnText="Go Home"
+          buttonText="Go Home"
         />
       )}
     </>

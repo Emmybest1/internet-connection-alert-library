@@ -8,10 +8,10 @@ export enum ModalPosition {
 }
 
 export interface IBaseComponentsProps {
-  bgColor?: string;
-  btnBgColor?: string;
-  btnTxtColor?: string;
-  txtColor?: string;
+  backgroundColor?: string;
+  buttonBackgroundColor?: string;
+  buttonTextColor?: string;
+  contentTextColor?: string;
 }
 
 export interface APIEngineProps extends IBaseComponentsProps {

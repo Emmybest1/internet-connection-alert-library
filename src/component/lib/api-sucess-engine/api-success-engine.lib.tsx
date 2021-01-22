@@ -10,10 +10,10 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
   shouldShowModal,
   fontFamily,
   retryFunc,
-  bgColor,
-  txtColor,
-  btnBgColor,
-  btnTxtColor,
+  backgroundColor,
+  contentTextColor,
+  buttonBackgroundColor,
+  buttonTextColor,
   modalPosition,
 }): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(() => shouldShowModal ?? false);
@@ -28,7 +28,7 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
             role="alert"
             aria-live="assertive"
             aria-labelledby="apiSuccHeading"
-            style={{backgroundColor: bgColor, color: txtColor, fontFamily}}
+            style={{backgroundColor: backgroundColor, color: contentTextColor, fontFamily}}
           >
             <h4 id="apiSuccHeading" className="api-heading pb-20">
               {heading ? heading : 'API Error'}
@@ -37,7 +37,7 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
               <p className="api-symbol">✔️</p>
               <p className="api-message pl-20">{message}</p>
             </span>
-            <div className="btn-wrapper" style={{color: btnTxtColor}}>
+            <div className="btn-wrapper" style={{color: buttonTextColor}}>
               <Button
                 buttonText="Close"
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
