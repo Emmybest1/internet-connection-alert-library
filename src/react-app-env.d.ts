@@ -7,15 +7,18 @@ export enum ModalPosition {
   left = 'left',
 }
 
-export type APIEngineProps = {
+export interface IBaseComponentsProps {
+  bgColor?: string;
+  btnBgColor?: string;
+  btnTxtColor?: string;
+  txtColor?: string;
+}
+
+export interface APIEngineProps extends IBaseComponentsProps {
   shouldShowModal: boolean;
   heading?: string;
   message: string;
   fontFamily?: string;
   retryFunc: any;
-  bgColor?: string;
-  txtColor?: string;
-  btnBgColor?: string;
-  btnTxtColor?: string;
   modalPosition?: ModalPosition.top | ModalPosition.bottom | ModalPosition.right | ModalPosition.left;
-};
+}

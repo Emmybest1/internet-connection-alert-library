@@ -27,7 +27,8 @@ type ButtonProps = {
   toolTipHint?: string;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
-const Button: React.FC<ButtonProps> = ({
+
+export const Button: React.FC<ButtonProps> = ({
   buttonText,
   buttonBgColor,
   buttonTxtColor,

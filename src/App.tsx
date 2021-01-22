@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import * as Lib from './react-ui-bucket';
 import './app.style.scss';
 
@@ -24,29 +24,39 @@ const App: React.FC = (): JSX.Element => {
   return (
     <>
       <Router>
-        <Route
-          exact
-          path="/"
-          render={(): JSX.Element => (
-            <>
-              <h4>Testing Internet Connection Component </h4>
-              <Lib.InternetAlert />
-              <Lib.ApiErrorEngine
-                shouldShowModal={true}
-                heading="We are sorry!"
-                message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-                retryFunc={() => console.log('Retried')}
-              />
-              <Lib.ApiSuccessEngine
-                shouldShowModal={true}
-                heading="Its a Success!"
-                message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-                retryFunc={() => console.log('Retried')}
-              />
-              <Lib.Loader isLoading={isLoading} />
-            </>
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(): JSX.Element => (
+              <>
+                <h4>Testing Internet Connection Component </h4>
+                <Lib.InternetAlert />
+                <Lib.ApiErrorEngine
+                  shouldShowModal={true}
+                  heading="We are sorry!"
+                  message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
+                  retryFunc={() => console.log('Retried')}
+                />
+                <Lib.ApiSuccessEngine
+                  shouldShowModal={true}
+                  heading="Its a Success!"
+                  message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
+                  retryFunc={() => console.log('Retried')}
+                />
+                <Lib.Loader isLoading={isLoading} />
+              </>
+            )}
+          />
+
+          <Lib.ProtectedRoute
+            path="/chenue-achebe"
+            exact={true}
+            component={() => <h3>Things fall Apart</h3>}
+            shouldRender={false}
+            fallBackPath="/"
+          />
+        </Switch>
       </Router>
     </>
   );

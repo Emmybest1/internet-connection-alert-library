@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import ModalPortlet from '../../partials/react-portal/react-portal.component';
+import {ReactPortal} from '../../partials/react-portal/react-portal.component';
 import {ModalPosition} from '../../../react-app-env';
 import './internet-alert.style.scss';
 
@@ -55,7 +55,7 @@ export const InternetAlert: React.FC<InternetAlertProps> = ({
   });
 
   return (
-    <ModalPortlet>
+    <ReactPortal>
       <>
         {isInternetDisconnected && !shouldCloseAlert && (
           <div
@@ -92,7 +92,7 @@ export const InternetAlert: React.FC<InternetAlertProps> = ({
           </div>
         )}
       </>
-    </ModalPortlet>
+    </ReactPortal>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Button from '../../partials/button/button.component';
+import {Button} from '../../partials/button/button.component';
 import ReactPortal from '../../partials/react-portal/react-portal.component';
 import {APIEngineProps} from '../../../react-app-env';
 import '../../../sass/api-engine.scss';

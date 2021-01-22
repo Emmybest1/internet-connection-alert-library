@@ -12,7 +12,8 @@ type InputProps = {
   fontFamily: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 };
-const Input: React.FC<InputProps> = ({
+
+export const Input: React.FC<InputProps> = ({
   id,
   inputType,
   inputName,

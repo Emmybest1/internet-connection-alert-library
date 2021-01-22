@@ -8,7 +8,7 @@ type ReactPortalProps = {
   children: JSX.Element;
 };
 
-const ReactPortal: React.FC<ReactPortalProps> = ({children}): JSX.Element => {
+export const ReactPortal: React.FC<ReactPortalProps> = ({children}): JSX.Element => {
   const divContainer = window.document.createElement('div');
   divContainer.setAttribute('class', 'modal-container');
 
