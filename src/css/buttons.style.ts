@@ -13,7 +13,7 @@ type ButtonProps = {
   width: string;
 };
 
-export const BUTTON_MODIFIERS = (color: string) => ({
+export const BUTTON_MODIFIERS = (color?: string) => ({
   small: () => `
   font-size:0.8em;
   padding:4px 12px;
@@ -26,24 +26,18 @@ export const BUTTON_MODIFIERS = (color: string) => ({
   `,
   danger: () => `
   background-color: ${defaultThemes.dangerButtonBackgroundColorDefault};
+  border:solid 2px #fff;
   color: ${defaultThemes.dangerButtonTextColor};
   `,
   warning: () => `
   background-color: ${defaultThemes.warningButtonBackgroundColorDefault};
+  border:solid 2px #fff;
   color: ${defaultThemes.warningButtonTextColor};
   `,
   success: () => `
   background-color: ${defaultThemes.successButtonBackgroundColorDefault};
+  border:solid 2px #fff;
   color: ${defaultThemes.successButtonTextColor};
-  `,
-  borderSingle: () => `
-  border:solid 2px ${color};
-  `,
-  borderDouble: () => `
-  border:double 2px ${color};
-  `,
-  borderDashed: () => `
-  border:dashed 2px ${color};
   `,
 });
 
@@ -54,5 +48,5 @@ export const StyledButton = styled.button`
   padding: 12px 24px;
   min-width: 100px;
   width: 200px;
-  ${applyStyleModifiers(BUTTON_MODIFIERS('#000'))}
+  ${applyStyleModifiers(BUTTON_MODIFIERS())}
 `;
