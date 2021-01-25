@@ -10,7 +10,7 @@ const App: React.FC = (): JSX.Element => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: /*NodeJS.Timeout*/ number;
 
     timeout = setTimeout(() => {
       setIsLoading(false);
