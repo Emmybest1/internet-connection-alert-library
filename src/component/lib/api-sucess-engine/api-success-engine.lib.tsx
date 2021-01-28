@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button} from '../../partials/button/button.component';
 import ReactPortal from '../../partials/react-portal/react-portal.component';
-import {APIEngineProps} from '../../../react-app-env';
+import {APIEngineProps} from '../../../types';
 import '../../../sass/api-engine.scss';
 
 export const ApiSuccessEngine: React.FC<APIEngineProps> = ({

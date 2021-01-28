@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {IBaseComponentsProps} from '../../../react-app-env';
+import {IBaseComponentsProps} from '../../../types';
 import {Button} from '../../partials/button/button.component';
 import './fallback-engine.style.scss';
 

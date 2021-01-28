@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, RouteProps} from 'react-router-dom';
-import {FallBackEngine} from '../../react-ui-bucket';
+import {FallBackEngine} from '../../../react-ui-bucket';
 
 interface IProtectedRouteProps extends RouteProps {
   fallBackPath: string;

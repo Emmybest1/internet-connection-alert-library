@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {ReactPortal} from '../../partials/react-portal/react-portal.component';
-import {ModalPosition} from '../../../react-app-env';
+import {ModalPosition} from '../../../types';
 import './internet-alert.style.scss';
 
 type InternetAlertProps = {
