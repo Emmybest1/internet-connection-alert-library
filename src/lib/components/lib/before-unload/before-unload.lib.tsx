@@ -29,4 +29,28 @@ export const useBeforeUnload: React.FC<BeforeUnloadProps> = ({shouldUnloadPeacef
   return null;
 };
 
+/*********************
+ * @BeforeUnload: this is for class users, same logic applies as above.
+ * usecase: call it right after or before your lifecycles but i suggest right after your life cycles because this is basically consuming lifecyles & can be seen as custom life cycle
+ * inoke like this: BeforeUnload(!textChanged?true:false);
+ *********************/
+export const BeforeUnload = (shouldUnloadPeacefully: boolean) =>
+  class BeforeUnloadC extends React.Component {
+    beforeUnloadHandler = (ev: BeforeUnloadEvent) => {
+      if (shouldUnloadPeacefully) {
+        delete ev.returnValue;
+      } else {
+        ev.returnValue = 'Your unsaved data will be lost.';
+      }
+    };
+
+    componentDidMount() {
+      window.addEventListener('beforeunload', this.beforeUnloadHandler);
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener('beforeunload', this.beforeUnloadHandler);
+    }
+  };
+
 export default useBeforeUnload;

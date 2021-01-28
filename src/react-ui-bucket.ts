@@ -4,6 +4,6 @@ export {InternetAlert} from './lib/components/lib/internet-alert/internet-alert.
 export {Loader} from './lib/components/lib/loader/loader.lib';
 export {ProtectedRoute} from './lib/components/lib/protected-route/protected-route.lib';
 export {FallBackEngine} from './lib/components/lib/fallback-engine/fallback-engine.lib';
-export {useBeforeUnload} from './lib/components/lib/before-unload/before-unload.lib';
+export {useBeforeUnload, BeforeUnload} from './lib/components/lib/before-unload/before-unload.lib';
 export {encode} from './lib/utils/encode/encode.lib';
 export {decode} from './lib/utils/decode/decode.lib';
