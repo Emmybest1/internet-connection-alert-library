@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
 import ReactPortal from './react-portal.component';
-import '../../../setupTests';
+import '../../../../setupTests';
 
 describe('ModalPortlet component unit test', () => {
   let wrapper: ShallowWrapper;

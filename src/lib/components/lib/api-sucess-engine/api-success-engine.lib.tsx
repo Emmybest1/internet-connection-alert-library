@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Button} from '../../partials/button/button.component';
 import ReactPortal from '../../partials/react-portal/react-portal.component';
-import {APIEngineProps} from '../../../types';
-import '../../../sass/api-engine.scss';
+import {APIEngineProps} from '../../../../types';
+import '../../../../sass/api-engine.scss';
 
-export const ApiErrorEngine: React.FC<APIEngineProps> = ({
+export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
   heading,
   message,
   shouldShowModal,
@@ -22,21 +22,22 @@ export const ApiErrorEngine: React.FC<APIEngineProps> = ({
       {showModal && (
         <ReactPortal>
           <div
-            className={`api-engine-container api-error-engine-container modal-${modalPosition ? modalPosition : 'top'}`}
+            className={`api-engine-container api-success-engine-container  modal-${
+              modalPosition ? modalPosition : 'top'
+            }`}
             role="alert"
             aria-live="assertive"
-            aria-labelledby="apiErrHeading"
+            aria-labelledby="apiSuccHeading"
             style={{backgroundColor: backgroundColor, color: contentTextColor, fontFamily}}
           >
-            <h4 id="apiErrHeading" className="api-heading pb-20">
+            <h4 id="apiSuccHeading" className="api-heading pb-20">
               {heading ? heading : 'API Error'}
             </h4>
             <span className="row pb-20">
-              <p className="api-symbol">X</p>
+              <p className="api-symbol">✔️</p>
               <p className="api-message pl-20">{message}</p>
             </span>
             <div className="btn-wrapper" style={{color: buttonTextColor}}>
-              <Button buttonText="Retry" onClick={retryFunc} />
               <Button
                 buttonText="Close"
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
@@ -49,4 +50,4 @@ export const ApiErrorEngine: React.FC<APIEngineProps> = ({
   );
 };
 
-export default ApiErrorEngine;
+export default ApiSuccessEngine;
