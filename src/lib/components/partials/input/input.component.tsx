@@ -10,6 +10,7 @@ type InputProps = {
   inputRegExp?: RegExp;
   labelText?: string;
   fontFamily: string;
+  fileAcceptanceFormat?: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 };
 
@@ -22,6 +23,7 @@ export const Input: React.FC<InputProps> = ({
   inputRegExp,
   fontFamily,
   labelText,
+  fileAcceptanceFormat,
   onChange,
 }): JSX.Element => {
   const [passedRegExp, setPassedRegExp] = useState<boolean>(true);
@@ -34,6 +36,7 @@ export const Input: React.FC<InputProps> = ({
         <input
           type={inputType}
           name={inputName}
+          accept={fileAcceptanceFormat ? fileAcceptanceFormat : ''}
           aria-label={labelText}
           style={{fontFamily}}
           onChange={() => {
