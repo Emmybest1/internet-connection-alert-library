@@ -19,6 +19,5 @@ export interface APIEngineProps extends IBaseComponentsProps {
   heading?: string;
   message: string;
   fontFamily?: string;
-  retryFunc: any;
   modalPosition?: ModalPosition.top | ModalPosition.bottom | ModalPosition.right | ModalPosition.left;
 }

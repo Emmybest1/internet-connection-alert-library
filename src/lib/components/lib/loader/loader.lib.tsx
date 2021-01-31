@@ -15,7 +15,7 @@ export const Loader: React.FC<LoaderProps> = ({isLoading, assertive, loadingIcon
    *@useEffect this controls when to show the loading bar with respect to @argument(@isLoading boolean)
    *****************************************************************************************************/
   useEffect(() => {
-    let timeout: /* NodeJS.Timeout*/ number;
+    let timeout: NodeJS.Timeout /*|number*/;
 
     if (isLoading) {
       /*
@@ -39,7 +39,7 @@ export const Loader: React.FC<LoaderProps> = ({isLoading, assertive, loadingIcon
    *@useEffect this controls the @useState [isDoneLoading] by checking if previously there was a loading & now !Loading
    *********************************************************************************************************************/
   useEffect(() => {
-    let timeout: /*NodeJS.Timeout*/ number;
+    let timeout: NodeJS.Timeout /*|number*/;
 
     if (wasThereALoad) {
       setIsDoneLoading(true);

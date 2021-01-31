@@ -10,7 +10,7 @@ const App: React.FC = (): JSX.Element => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    let timeout: /*NodeJS.Timeout*/ number;
+    let timeout: NodeJS.Timeout /*|number*/;
 
     timeout = setTimeout(() => {
       setIsLoading(false);
@@ -36,13 +36,11 @@ const App: React.FC = (): JSX.Element => {
                   shouldShowModal={true}
                   heading="We are sorry!"
                   message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-                  retryFunc={() => console.log('Retried')}
                 />
                 <Lib.ApiSuccessEngine
                   shouldShowModal={true}
                   heading="Its a Success!"
                   message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-                  retryFunc={() => console.log('Retried')}
                 />
                 <Lib.Loader isLoading={isLoading} />
               </>

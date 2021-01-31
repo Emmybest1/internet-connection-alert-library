@@ -9,7 +9,6 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
   message,
   shouldShowModal,
   fontFamily,
-  retryFunc,
   backgroundColor,
   contentTextColor,
   buttonBackgroundColor,

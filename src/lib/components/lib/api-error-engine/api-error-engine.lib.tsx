@@ -4,17 +4,22 @@ import ReactPortal from '../../partials/react-portal/react-portal.component';
 import {APIEngineProps} from '../../../../types';
 import '../../../../sass/api-engine.scss';
 
-export const ApiErrorEngine: React.FC<APIEngineProps> = ({
-  heading,
-  message,
-  shouldShowModal,
-  fontFamily,
-  retryFunc,
+interface APIErrorEngineProps extends APIEngineProps {
+  retryFuncButtonText?: string;
+  retryFunc?: (...args: any) => void | any;
+}
+export const ApiErrorEngine: React.FC<APIErrorEngineProps> = ({
   backgroundColor,
-  contentTextColor,
   buttonBackgroundColor,
   buttonTextColor,
+  contentTextColor,
+  fontFamily,
+  heading,
+  message,
   modalPosition,
+  retryFunc,
+  retryFuncButtonText,
+  shouldShowModal,
 }): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(() => shouldShowModal ?? false);
   return (
@@ -36,7 +41,10 @@ export const ApiErrorEngine: React.FC<APIEngineProps> = ({
               <p className="api-message pl-20">{message}</p>
             </span>
             <div className="btn-wrapper" style={{color: buttonTextColor}}>
-              <Button buttonText="Retry" onClick={retryFunc} />
+              <Button
+                buttonText={retryFuncButtonText ? retryFuncButtonText : 'Reload Page'}
+                onClick={() => (retryFunc ? retryFunc() : window.location.reload())}
+              />
               <Button
                 buttonText="Close"
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
