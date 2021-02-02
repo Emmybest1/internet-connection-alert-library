@@ -7,13 +7,13 @@ enum ButtonTypes {
   reset = 'reset',
 }
 
-enum ButtonClassName {
+export enum ButtonClassName {
   danger = 'danger',
   warning = 'warning',
   success = 'success',
 }
 
-type ButtonProps = {
+export type ButtonProps = {
   buttonText: string;
   buttonBackgroundColor?: string;
   buttonTextColor?: string;
