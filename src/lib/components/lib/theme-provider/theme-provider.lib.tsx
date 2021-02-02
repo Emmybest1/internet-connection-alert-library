@@ -5,6 +5,9 @@ type TReactUIBucketProvider = {
   theme: string;
 };
 
+/************************************
+ * @ReactUIBucketProvider for Create-react-app users wrap it around your App component in the index.js|ts file. for other bootstrapers, wrap it around your root file that renders to the DOM elementNode
+ ************************************/
 export const ReactUIBucketProvider: React.FC<TReactUIBucketProvider> = ({children, theme}): JSX.Element => {
   return (
     <div
