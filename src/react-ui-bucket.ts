@@ -18,4 +18,5 @@ export {decode} from './lib/utils/decode/decode.lib';
 /*
  * color utils
  */
-export {theme} from '../src/types.d';
+export {theme} from '../src/utils/_typography';
+export {storiesHierarchy} from '../src/utils/_stories';

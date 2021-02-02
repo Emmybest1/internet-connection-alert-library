@@ -24,9 +24,10 @@ export const InternetAlert: React.FC<InternetAlertProps> = ({
   const [isInternetDisconnected, setIsInternetDisconnected] = useState<boolean>(false);
   const [shouldCloseAlert, setShouldCloseAlert] = useState<boolean>(false);
 
-  /***************
-   *@function interinternetDisconnectedHandler this event handler gets invoke when an internet is disconnect
-   ***************/
+  /***************************************************************************************************
+   * @interinternetDisconnectedHandler : this event handler gets invoke when an internet is disconnect
+   * @reference : checkout the stories for more details
+   ***************************************************************************************************/
   const internetDisconnectedHandler: () => void = (): void => {
     setIsInternetDisconnected(true);
   };
@@ -39,9 +40,10 @@ export const InternetAlert: React.FC<InternetAlertProps> = ({
     };
   });
 
-  /***************
-   *@function interinternetConnectedHandler this event handler gets invoke when an internet is connected
-   ***************/
+  /************************************************************************************************
+   * @interinternetConnectedHandler : this event handler gets invoke when an internet is connected
+   * @reference : checkout the stories for more details
+   ************************************************************************************************/
   const internetConnectedHandler: () => void = (): void => {
     setIsInternetDisconnected(false);
   };

@@ -11,6 +11,13 @@ interface IFallBackEngineProps extends IBaseComponentsProps {
   fallBackPath: string;
 }
 
+/*****************************************************************************************************************************************
+ * @FallBackEngine : this component can be called when you need to fallback to a viewer that tells why the fallback happened
+ * after then you can click a button to take you to a safe view
+ * @userCase : <FallBackEngine textToDisplay="Sorry you are not authorized to access the view" buttonText="Go Home" fallBackPath="/home"/>
+ * @reference : checkout the stories for more details
+ *****************************************************************************************************************************************/
+
 export const FallBackEngine: React.FC<IFallBackEngineProps> = ({
   heading,
   textToDisplay,
