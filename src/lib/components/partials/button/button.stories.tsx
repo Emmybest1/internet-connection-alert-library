@@ -1,14 +1,11 @@
 import React from 'react';
-import {Story} from '@storybook/react/types-6-0';
-import {Button, ButtonProps, ButtonClassName} from './button.component';
+import {Button, ButtonClassName} from './button.component';
+import {storiesHierarchy as h} from '../../../../react-ui-bucket';
 
 export default {
-  title: 'Partials/Form/Button',
+  title: `${h.hPages}/Button`,
   component: Button,
   argTypes: {onClick: {action: 'Clicked'}},
 };
-
-const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
-
-export const SuccessButton = ButtonTemplate.bind({});
-export const SuccessDanger = () => <Button buttonText="Danger" className={ButtonClassName.danger} />;
+export const SuccessButton = () => <Button buttonText="Success" className={ButtonClassName.success} />;
+export const DangerButton = () => <Button buttonText="Danger" className={ButtonClassName.danger} />;
