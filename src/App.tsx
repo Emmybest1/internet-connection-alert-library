@@ -32,6 +32,7 @@ const App: React.FC = (): JSX.Element => {
               <>
                 <h4>Testing Internet Connection Component </h4>
                 <Lib.InternetAlert />
+                <Lib.Loader isLoading={isLoading} />
                 <Lib.ApiErrorEngine
                   shouldShowModal={true}
                   heading="We are sorry!"
@@ -42,7 +43,6 @@ const App: React.FC = (): JSX.Element => {
                   heading="Its a Success!"
                   message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
                 />
-                <Lib.Loader isLoading={isLoading} />
               </>
             )}
           />

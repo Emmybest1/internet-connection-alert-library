@@ -39,6 +39,7 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
             <div className="btn-wrapper" style={{color: buttonTextColor}}>
               <Button
                 buttonText="Close"
+                buttonBackgroundColor={buttonBackgroundColor}
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
               />
             </div>

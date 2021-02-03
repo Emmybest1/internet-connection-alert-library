@@ -47,6 +47,7 @@ export const ApiErrorEngine: React.FC<APIErrorEngineProps> = ({
               />
               <Button
                 buttonText="Close"
+                buttonBackgroundColor={buttonBackgroundColor}
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
               />
             </div>
