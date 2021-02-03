@@ -26,7 +26,6 @@ export type ButtonProps = {
   OnPassiveConfirm?: boolean;
   toolTip?: boolean;
   toolTipHint?: string;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -42,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
   toolTip,
   toolTipHint,
   OnPassiveConfirm,
-  onClick,
+  ...otherProps
 }): JSX.Element => {
   return (
     <>
@@ -52,7 +51,7 @@ export const Button: React.FC<ButtonProps> = ({
         disabled={buttonDisable ? true : false}
         style={{backgroundColor: buttonBackgroundColor, color: buttonTextColor, fontFamily}}
         className={`react-ui-button ${className}`}
-        onClick={onClick}
+        {...otherProps}
       >
         {buttonImgSrc && (
           <span>

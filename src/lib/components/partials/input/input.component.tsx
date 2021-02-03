@@ -11,10 +11,9 @@ type InputProps = {
   type: string;
   value: string;
   regExp?: RegExp;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 };
 
-export const Input: React.FC<InputProps & any> = ({
+export const Input: React.FC<InputProps> = ({
   id,
   type,
   name,
@@ -24,14 +23,14 @@ export const Input: React.FC<InputProps & any> = ({
   fontFamily,
   label,
   fileFormat,
-  onChange,
+  ...otherProps
 }): JSX.Element => {
   const [passedRegExp, setPassedRegExp] = useState<boolean>(true);
   return (
     <>
       {label && <label htmlFor={id}>{label}</label>}
       {type === 'textarea' ? (
-        <textarea id={id} name={name} cols={10} rows={5} onChange={() => onChange}></textarea>
+        <textarea id={id} name={name} cols={10} rows={5} {...otherProps}></textarea>
       ) : (
         <input
           type={type}
@@ -39,12 +38,10 @@ export const Input: React.FC<InputProps & any> = ({
           accept={fileFormat ? fileFormat : ''}
           aria-label={label}
           style={{fontFamily}}
-          onChange={() => {
-            onChange;
-            {
-              regExp && regExp.test(value) ? setPassedRegExp(true) : setPassedRegExp(false);
-            }
+          onKeyDown={(ev: React.KeyboardEvent<HTMLInputElement>) => {
+            regExp && regExp.test(ev.toString()) ? setPassedRegExp(true) : setPassedRegExp(false);
           }}
+          {...otherProps}
         />
       )}
 
