@@ -45,11 +45,11 @@ const _countryEvaluator = (africanCountry: string, asianCountry: string, europea
   };
 };
 
-export const _truthyOrFalsyDetector = (): boolean => {
-  const result = Object.create(
-    _countryEvaluator(AfricanCountries.Nigeria, AsianCountries.India, EuropeanCountries.Estonia)
-  );
+const result = Object.create(
+  _countryEvaluator(AfricanCountries.Nigeria, AsianCountries.India, EuropeanCountries.Estonia)
+);
 
+export const _truthyOrFalsyDetector = (): boolean => {
   if (result.isAfricanCountry && result.isAsianCountry && result.isEuropeanCountry) {
     return true;
   }

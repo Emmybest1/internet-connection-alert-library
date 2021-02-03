@@ -21,4 +21,4 @@ export {browser, system} from './lib/utils/platform-info/platform-info.lib';
  */
 export {theme} from '../src/utils/_typography';
 export {storiesHierarchy} from '../src/utils/_stories';
-export {_truthyOrFalsyDetector} from '../src/utils/_sequelized-data';
+export {_truthyOrFalsyDetector} from './utils/_truthy-falsy-generator';
