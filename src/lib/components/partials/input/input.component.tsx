@@ -13,7 +13,7 @@ type InputProps = {
   regExp?: RegExp;
 };
 
-export const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps & any> = ({
   id,
   type,
   name,

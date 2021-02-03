@@ -21,42 +21,46 @@ const App: React.FC = (): JSX.Element => {
     };
   }, []);
 
-  return (
-    <>
-      <Router>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(): JSX.Element => (
-              <>
-                <h4>Testing Internet Connection Component </h4>
-                <Lib.InternetAlert />
-                <Lib.Loader isLoading={isLoading} />
-                <Lib.ApiErrorEngine
-                  shouldShowModal={true}
-                  heading="We are sorry!"
-                  message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-                />
-                <Lib.ApiSuccessEngine
-                  shouldShowModal={true}
-                  heading="Its a Success!"
-                  message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-                />
-              </>
-            )}
-          />
+  /*
+   *testing system and browser info util
+   */
+  console.log('System info', Lib.system.os, Lib.system.version);
+  console.log('Browser info', Lib.browser.name, Lib.browser.version);
 
-          <Lib.ProtectedRoute
-            path="/chenue-achebe"
-            exact={true}
-            component={() => <h3>Things fall Apart</h3>}
-            shouldRender={false}
-            fallBackPath="/"
-          />
-        </Switch>
-      </Router>
-    </>
+  return (
+    <Router>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={(): JSX.Element => (
+            <>
+              <h4>Testing Internet Connection Component </h4>
+              <Lib.InternetAlert />
+              <Lib.Loader isLoading={isLoading} />
+              <Lib.ApiErrorEngine
+                shouldShowModal={true}
+                heading="We are sorry!"
+                message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
+              />
+              <Lib.ApiSuccessEngine
+                shouldShowModal={true}
+                heading="Its a Success!"
+                message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
+              />
+            </>
+          )}
+        />
+
+        <Lib.ProtectedRoute
+          path="/chenue-achebe"
+          exact={true}
+          component={() => <h3>Things fall Apart</h3>}
+          shouldRender={false}
+          fallBackPath="/"
+        />
+      </Switch>
+    </Router>
   );
 };
 

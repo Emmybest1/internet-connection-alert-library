@@ -28,7 +28,7 @@ export type ButtonProps = {
   toolTipHint?: string;
 };
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps & any> = ({
   buttonText,
   buttonBackgroundColor,
   buttonTextColor,

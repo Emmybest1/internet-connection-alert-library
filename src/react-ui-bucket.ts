@@ -15,6 +15,7 @@ export {useBeforeUnload, BeforeUnload} from './lib/components/lib/before-unload/
  */
 export {encode} from './lib/utils/encode/encode.lib';
 export {decode} from './lib/utils/decode/decode.lib';
+export {browser, system} from './lib/utils/platform-info/platform-info.lib';
 /*
  * Ts utils: typography,stories hierarchy,truthANdFalsyValue Generator, etc
  */
