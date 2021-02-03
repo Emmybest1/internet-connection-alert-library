@@ -3,52 +3,52 @@ import './input.style.scss';
 
 type InputProps = {
   id: string;
-  inputType: string;
-  inputValue: string;
-  inputName: string;
-  inputHint?: string;
-  inputRegExp?: RegExp;
-  labelText?: string;
-  fontFamily: string;
-  fileAcceptanceFormat?: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  fontFamily?: string;
+  fileFormat?: string;
+  hint?: string;
+  label?: string;
+  name: string;
+  type: string;
+  value: string;
+  regExp?: RegExp;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 };
 
-export const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps & any> = ({
   id,
-  inputType,
-  inputName,
-  inputValue,
-  inputHint,
-  inputRegExp,
+  type,
+  name,
+  value,
+  hint,
+  regExp,
   fontFamily,
-  labelText,
-  fileAcceptanceFormat,
+  label,
+  fileFormat,
   onChange,
 }): JSX.Element => {
   const [passedRegExp, setPassedRegExp] = useState<boolean>(true);
   return (
     <>
-      {labelText && <label htmlFor={id}>{labelText}</label>}
-      {inputType === 'textarea' ? (
-        <textarea id={id} name={inputName} cols={10} rows={5} onChange={() => onChange}></textarea>
+      {label && <label htmlFor={id}>{label}</label>}
+      {type === 'textarea' ? (
+        <textarea id={id} name={name} cols={10} rows={5} onChange={() => onChange}></textarea>
       ) : (
         <input
-          type={inputType}
-          name={inputName}
-          accept={fileAcceptanceFormat ? fileAcceptanceFormat : ''}
-          aria-label={labelText}
+          type={type}
+          name={name}
+          accept={fileFormat ? fileFormat : ''}
+          aria-label={label}
           style={{fontFamily}}
           onChange={() => {
             onChange;
             {
-              inputRegExp && inputRegExp.test(inputValue) ? setPassedRegExp(true) : setPassedRegExp(false);
+              regExp && regExp.test(value) ? setPassedRegExp(true) : setPassedRegExp(false);
             }
           }}
         />
       )}
 
-      {!passedRegExp && <span className="input-hint">{inputHint}</span>}
+      {!passedRegExp && <span className="input-hint">{hint}</span>}
     </>
   );
 };

@@ -7,7 +7,7 @@ export default {
   component: Button,
 };
 
-//const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
+// const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 // export const SuccessButton = ButtonTemplate.bind({});
 // export const SuccessDanger = () => (
