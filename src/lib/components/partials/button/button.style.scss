@@ -1,29 +1,42 @@
 .react-ui-button {
   &:default {
+    border: solid 3px #eee;
+    border-radius: 5px;
+    padding: 8px 12px;
   }
 
   &:active {
   }
 
-  &:disabled {
-    background-color: #5a6268;
-  }
-
   &:hover {
     opacity: 0.7;
   }
+
+  &:disabled {
+    background-color: #5a6268;
+  }
+}
+
+button {
+  border: solid 3px #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
 }
 
 .danger {
   background-color: #c82333;
+  color: #fff;
 }
 
 .warning {
   background-color: #e0a800;
+  color: #fff;
 }
 
 .success {
   background-color: #218838;
+  color: #fff;
 }
 
 .btn-tooltip {

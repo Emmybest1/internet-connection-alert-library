@@ -1,14 +1,32 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = function ({config}) {
-  config.module.rules.push({
-    test: /\.scss$/,
-    loaders: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../'),
-  });
+module.exports = {
+  stories: ['../src/stories/**/*.stories.js'],
+  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
 
-  config.plugins.push(new MiniCssExtractPlugin({filename: '[name].css'}));
-
-  return config;
+  webpackFinal: async (config, {configType}) => {
+    config.module.rules.map((rule) => {
+      if (rule.oneOf) {
+        rule.oneOf = rule.oneOf.slice().map((subRule) => {
+          if (subRule.test instanceof RegExp && subRule.test.test('.scss')) {
+            return {
+              ...subRule,
+              use: [
+                ...subRule.use,
+                {
+                  loader: require.resolve('sass-resources-loader'),
+                  options: {
+                    resources: [path.resolve(__dirname, '../src/styles/_common.scss')],
+                  },
+                },
+              ],
+            };
+          }
+          return subRule;
+        });
+      }
+      return rule;
+    });
+    return config;
+  },
 };
