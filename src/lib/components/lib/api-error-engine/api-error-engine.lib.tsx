@@ -9,11 +9,6 @@ interface APIErrorEngineProps extends APIEngineProps {
   retryFunc?: (...args: any) => void | any;
 }
 export const ApiErrorEngine: React.FC<APIErrorEngineProps> = ({
-  backgroundColor,
-  buttonBackgroundColor,
-  buttonTextColor,
-  contentTextColor,
-  fontFamily,
   heading,
   message,
   modalPosition,
@@ -31,7 +26,6 @@ export const ApiErrorEngine: React.FC<APIErrorEngineProps> = ({
             role="alert"
             aria-live="assertive"
             aria-labelledby="apiErrHeading"
-            style={{backgroundColor: backgroundColor, color: contentTextColor, fontFamily}}
           >
             <h4 id="apiErrHeading" className="api-heading pb-20">
               {heading ? heading : 'API Error'}
@@ -40,14 +34,13 @@ export const ApiErrorEngine: React.FC<APIErrorEngineProps> = ({
               <p className="api-symbol">X</p>
               <p className="api-message pl-20">{message}</p>
             </span>
-            <div className="btn-wrapper" style={{color: buttonTextColor}}>
+            <div className="btn-wrapper">
               <Button
                 buttonText={retryFuncButtonText ? retryFuncButtonText : 'Reload Page'}
                 onClick={() => (retryFunc ? retryFunc() : window.location.reload())}
               />
               <Button
                 buttonText="Close"
-                buttonBackgroundColor={buttonBackgroundColor}
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
               />
             </div>

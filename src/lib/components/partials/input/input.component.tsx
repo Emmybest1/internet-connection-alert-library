@@ -1,28 +1,27 @@
 import React, {useState} from 'react';
+import InputInfoModal from './input-info-modal.component';
 import './input.style.scss';
 
 type InputProps = {
   id: string;
-  fontFamily?: string;
-  fileFormat?: string;
   hint?: string;
+  info?: React.ReactNode;
   label?: string;
   name: string;
   type: string;
-  value: string;
   regExp?: RegExp;
+  value: string;
+  otherProps: any;
 };
 
 export const Input: React.FC<InputProps & any> = ({
   id,
   type,
   name,
-  value,
   hint,
   regExp,
-  fontFamily,
   label,
-  fileFormat,
+  info,
   ...otherProps
 }): JSX.Element => {
   const [passedRegExp, setPassedRegExp] = useState<boolean>(true);
@@ -35,9 +34,7 @@ export const Input: React.FC<InputProps & any> = ({
         <input
           type={type}
           name={name}
-          accept={fileFormat ? fileFormat : ''}
           aria-label={label}
-          style={{fontFamily}}
           onKeyDown={(ev: React.KeyboardEvent<HTMLInputElement>) => {
             regExp && regExp.test(ev.toString()) ? setPassedRegExp(true) : setPassedRegExp(false);
           }}
@@ -46,6 +43,8 @@ export const Input: React.FC<InputProps & any> = ({
       )}
 
       {!passedRegExp && <span className="input-hint">{hint}</span>}
+
+      <InputInfoModal info={info} />
     </>
   );
 };

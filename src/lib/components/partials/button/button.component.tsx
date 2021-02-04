@@ -15,32 +15,22 @@ export enum ButtonClassName {
 
 export type ButtonProps = {
   buttonText: string;
-  buttonBackgroundColor?: string;
-  buttonTextColor?: string;
   buttonType?: ButtonTypes.button | ButtonTypes.submit | ButtonTypes.reset;
   buttonDisable?: boolean;
-  buttonImgSrc?: string;
-  buttonImgAlt?: string;
+  buttonIcon?: React.ReactElement;
   className?: ButtonClassName.danger | ButtonClassName.warning | ButtonClassName.success;
-  fontFamily?: string;
-  OnPassiveConfirm?: boolean;
   toolTip?: boolean;
   toolTipHint?: string;
 };
 
 export const Button: React.FC<ButtonProps & any> = ({
   buttonText,
-  buttonBackgroundColor,
-  buttonTextColor,
   buttonType,
   buttonDisable,
-  buttonImgSrc,
-  buttonImgAlt,
+  buttonIcon,
   className,
-  fontFamily,
   toolTip,
   toolTipHint,
-  OnPassiveConfirm,
   ...otherProps
 }): JSX.Element => {
   return (
@@ -49,16 +39,12 @@ export const Button: React.FC<ButtonProps & any> = ({
       <button
         type={buttonType ? buttonType : 'button'}
         disabled={buttonDisable ? true : false}
-        style={{backgroundColor: buttonBackgroundColor, color: buttonTextColor, fontFamily}}
         className={`react-ui-button ${className}`}
         {...otherProps}
       >
-        {buttonImgSrc && (
-          <span>
-            <img src={buttonImgSrc} alt={buttonImgAlt ? buttonImgAlt : ''} />
-          </span>
-        )}
         {buttonText}
+        {``}
+        {buttonIcon && <span>{buttonIcon}</span>}
       </button>
     </>
   );

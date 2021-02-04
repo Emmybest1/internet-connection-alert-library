@@ -1,11 +1,15 @@
+button {
+  border: solid 3px #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
 .react-ui-button {
   &:default {
     border: solid 3px #eee;
     border-radius: 5px;
     padding: 8px 12px;
-  }
-
-  &:active {
   }
 
   &:hover {
@@ -15,13 +19,6 @@
   &:disabled {
     background-color: #5a6268;
   }
-}
-
-button {
-  border: solid 3px #eee;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 8px 12px;
 }
 
 .danger {

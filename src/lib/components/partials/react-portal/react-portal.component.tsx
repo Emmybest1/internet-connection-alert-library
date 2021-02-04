@@ -5,7 +5,7 @@ import './react-portal.style.scss';
 const modalRoot = document.getElementById('modal-root') as HTMLDivElement;
 
 type ReactPortalProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const ReactPortal: React.FC<ReactPortalProps> = ({children}): JSX.Element => {

@@ -7,13 +7,8 @@ import '../../../../sass/api-engine.scss';
 export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
   heading,
   message,
-  shouldShowModal,
-  fontFamily,
-  backgroundColor,
-  contentTextColor,
-  buttonBackgroundColor,
-  buttonTextColor,
   modalPosition,
+  shouldShowModal,
 }): JSX.Element => {
   const [showModal, setShowModal] = useState<boolean>(() => shouldShowModal ?? false);
   return (
@@ -27,7 +22,6 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
             role="alert"
             aria-live="assertive"
             aria-labelledby="apiSuccHeading"
-            style={{backgroundColor: backgroundColor, color: contentTextColor, fontFamily}}
           >
             <h4 id="apiSuccHeading" className="api-heading pb-20">
               {heading ? heading : 'API Error'}
@@ -36,10 +30,9 @@ export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
               <p className="api-symbol">✔️</p>
               <p className="api-message pl-20">{message}</p>
             </span>
-            <div className="btn-wrapper" style={{color: buttonTextColor}}>
+            <div className="btn-wrapper">
               <Button
                 buttonText="Close"
-                buttonBackgroundColor={buttonBackgroundColor}
                 onClick={(event: React.MouseEvent<HTMLButtonElement>) => setShowModal(false)}
               />
             </div>

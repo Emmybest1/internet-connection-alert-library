@@ -4,5 +4,15 @@ textarea {
 input {
 }
 
+input[type='submit'] {
+}
+
+input[type='search'] {
+}
 .input-hint {
+  border: solid 2px #660708;
+  border-radius: 5px;
+  color: #660708;
+  padding: 8px 12px;
+  min-width: inherit;
 }

@@ -19,38 +19,22 @@ interface IFallBackEngineProps extends IBaseComponentsProps {
  *****************************************************************************************************************************************/
 
 export const FallBackEngine: React.FC<IFallBackEngineProps> = ({
+  buttonText,
+  fallBackPath,
   heading,
   textToDisplay,
-  fallBackPath,
-  buttonText,
-  backgroundColor,
-  contentTextColor,
-  buttonBackgroundColor,
-  buttonTextColor,
 }): JSX.Element => {
   const history = useHistory();
 
   return (
-    <main
-      style={{
-        backgroundColor: backgroundColor,
-        color: contentTextColor,
-      }}
-      className="fallback-main"
-    >
+    <main className="fallback-main">
       <img src={`${process.env.PUBLIC_URL}/assets/images/error.png`} alt="" />
       {heading && heading}
 
       <p>{textToDisplay}</p>
-      <Button
-        buttonText={buttonText}
-        buttonTextColor={buttonTextColor}
-        buttonBackgroundColor={buttonBackgroundColor}
-        onClick={() => history.replace(fallBackPath)}
-      />
+      <Button buttonText={buttonText} onClick={() => history.replace(fallBackPath)} />
     </main>
   );
 };
 
 export default FallBackEngine;
-//image ref:https://

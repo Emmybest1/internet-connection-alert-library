@@ -13,9 +13,7 @@ export default {
   },
 } as Meta;
 
-const ButtonTemplate: Story<ButtonProps> = (args: ButtonProps) => (
-  <Button {...args} style={{border: 'solid 3px #eee', borderRadius: '5px', cursor: 'pointer', padding: '8px 12px'}} />
-);
+const ButtonTemplate: Story<ButtonProps> = (args: ButtonProps) => <Button {...args} />;
 
 export const SuccessButton = ButtonTemplate.bind({});
 SuccessButton.args = {
