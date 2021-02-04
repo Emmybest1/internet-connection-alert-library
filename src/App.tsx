@@ -8,6 +8,7 @@ const App: React.FC = (): JSX.Element => {
    * note: the below useState and useEffect is for experimenting the @Lib.Loader
    ******************************************************************************/
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
+  const [firstName, setFirstName] = React.useState<string>('');
 
   React.useEffect(() => {
     let timeout: NodeJS.Timeout /*|number*/;
@@ -47,6 +48,25 @@ const App: React.FC = (): JSX.Element => {
                 shouldShowModal={true}
                 heading="Its a Success!"
                 message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
+              />
+            </>
+          )}
+        />
+
+        <Route
+          exact
+          path="/inputs"
+          render={(): JSX.Element => (
+            <>
+              <Lib.Input
+                id="tx123"
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                regExp={/^s*[A-za-z]*$/}
+                hint="Please the firstName must be written in alphabets"
+                value={firstName}
+                onKeyDown={(ev: React.ChangeEvent<HTMLInputElement>): void => setFirstName(ev.target.value)}
               />
             </>
           )}
