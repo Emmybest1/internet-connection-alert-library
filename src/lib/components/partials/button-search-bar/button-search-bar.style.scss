@@ -20,8 +20,15 @@
     z-index: 2;
     right: 0;
     width: 35%;
+    height: 34px;
     &:hover {
       opacity: 0.98;
     }
+  }
+
+  &:hover {
+    border: solid 1px #aaaaaa;
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(21, 156, 228, 0.4);
   }
 }
