@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Button} from '../../partials/button/button.component';
 import ReactPortal from '../../partials/react-portal/react-portal.component';
-import {APIEngineProps} from '../../../../types';
+import {IAPIEngineProps} from '../../../../react-app-env';
 import '../../../../sass/api-engine.scss';
 
-export const ApiSuccessEngine: React.FC<APIEngineProps> = ({
+export const ApiSuccessEngine: React.FC<IAPIEngineProps> = ({
   heading,
   message,
   modalPosition,

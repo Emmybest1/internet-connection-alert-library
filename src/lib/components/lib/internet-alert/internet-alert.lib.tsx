@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {ReactPortal} from '../../partials/react-portal/react-portal.component';
-import {ModalPosition} from '../../../../types';
+import {ModalPosition} from '../../../../react-app-env';
 import './internet-alert.style.scss';
 
-type InternetAlertProps = {
+type TInternetAlertProps = {
   headingText?: string;
   bodyText?: string;
   buttonText?: string;
@@ -12,7 +12,7 @@ type InternetAlertProps = {
   color?: string;
   modalPosition?: ModalPosition.top | ModalPosition.bottom | ModalPosition.right | ModalPosition.left;
 };
-export const InternetAlert: React.FC<InternetAlertProps> = ({
+export const InternetAlert: React.FC<TInternetAlertProps> = ({
   headingText,
   bodyText,
   buttonText,

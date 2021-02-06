@@ -7,6 +7,8 @@ type TButtonSearchBarProps = {
   id: string;
   name: string;
   placeholder: string;
+  tooltip?: boolean;
+  toolTipHint?: string;
   onClick: (...arg: any) => any;
 };
 
@@ -15,12 +17,21 @@ const ButtonSearchBar: React.FC<TButtonSearchBarProps & any> = ({
   name,
   placeholder,
   onClick,
+  toolTip,
+  toolTipHint,
   ...otherProps
 }): JSX.Element => {
   return (
     <span className="btn-search-bar-container">
       <Input id={id} type="search" name={name} placeholder={placeholder} className="search-bar" {...otherProps} />
-      <Button buttonText="Search" className="search-btn" type="submit" onClick={onClick} />
+      <Button
+        buttonText="Search"
+        className="search-btn"
+        type="submit"
+        onClick={onClick}
+        toolTip={toolTip}
+        toolTipHint={toolTipHint}
+      />
     </span>
   );
 };

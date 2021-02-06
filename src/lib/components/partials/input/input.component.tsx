@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import InputInfoModal from './input-info-modal.component';
 import './input.style.scss';
 
-type InputProps = {
+type TInputProps = {
   id: string;
   info?: React.ReactNode;
   hint?: string;
@@ -15,7 +15,7 @@ type InputProps = {
   onKeyDown?: (ev: React.KeyboardEvent<HTMLInputElement>) => any;
 };
 
-export const Input: React.FC<InputProps & any> = ({
+export const Input: React.FC<TInputProps & any> = ({
   id,
   info,
   hint,
@@ -41,7 +41,15 @@ export const Input: React.FC<InputProps & any> = ({
       {label && <label htmlFor={id}>{label}</label>}
       {type === 'textarea' ? (
         <>
-          <textarea id={id} name={name} cols={10} rows={5} required={required} {...otherProps}></textarea>
+          <textarea
+            id={id}
+            name={name}
+            cols={10}
+            rows={5}
+            required={required}
+            aria-required={required ? true : false}
+            {...otherProps}
+          ></textarea>
 
           {/*
            * this is to be shown at render time for required inputs
@@ -63,7 +71,15 @@ export const Input: React.FC<InputProps & any> = ({
         </>
       ) : (
         <>
-          <input type={type} name={name} aria-label={label} required={required} value={value} {...otherProps} />
+          <input
+            type={type}
+            name={name}
+            aria-label={label}
+            required={required}
+            value={value}
+            {...otherProps}
+            aria-required={required ? true : false}
+          />
           {/*
            * this is to be shown at render time for required inputs
            */}

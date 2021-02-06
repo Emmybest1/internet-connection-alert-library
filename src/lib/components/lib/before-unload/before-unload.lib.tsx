@@ -1,6 +1,6 @@
 import React from 'react';
 
-type BeforeUnloadProps = {
+type TBeforeUnloadProps = {
   shouldUnloadPeacefully: boolean;
 };
 
@@ -10,7 +10,7 @@ type BeforeUnloadProps = {
  * Note: i didn't give you the priviledge to pass in a custom message because its redundant and every browser handles their own exit message for pReasons known to the browser engineers.
  * usecase: useBeforeUnload(!textChanged?true:false);
  ***********************/
-export const useBeforeUnload: React.FC<BeforeUnloadProps> = ({shouldUnloadPeacefully}): null => {
+export const useBeforeUnload: React.FC<TBeforeUnloadProps> = ({shouldUnloadPeacefully}): null => {
   React.useEffect(() => {
     let beforeunloadHandler: any;
 

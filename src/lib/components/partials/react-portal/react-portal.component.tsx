@@ -4,11 +4,11 @@ import './react-portal.style.scss';
 
 const modalRoot = document.getElementById('modal-root') as HTMLDivElement;
 
-type ReactPortalProps = {
+type TReactPortalProps = {
   children: React.ReactNode;
 };
 
-export const ReactPortal: React.FC<ReactPortalProps> = ({children}): JSX.Element => {
+export const ReactPortal: React.FC<TReactPortalProps> = ({children}): JSX.Element => {
   const divContainer = window.document.createElement('div');
   divContainer.setAttribute('class', 'modal-container');
 

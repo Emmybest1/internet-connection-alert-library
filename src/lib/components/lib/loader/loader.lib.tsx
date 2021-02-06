@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
-type LoaderProps = {
+type TLoaderProps = {
   isLoading: boolean;
   assertive?: boolean;
   loadingIcon?: JSX.Element;
 };
 
-export const Loader: React.FC<LoaderProps> = ({isLoading, assertive, loadingIcon}): JSX.Element => {
+export const Loader: React.FC<TLoaderProps> = ({isLoading, assertive, loadingIcon}): JSX.Element => {
   const [showLoading, setShowLoading] = useState<boolean>(false);
   const [isDoneLoading, setIsDoneLoading] = useState<boolean>(false);
   const [wasThereALoad, setWasThereALoad] = useState<boolean>(false);

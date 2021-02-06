@@ -13,7 +13,7 @@ export enum ButtonClassName {
   success = 'success',
 }
 
-export type ButtonProps = {
+export type TButtonProps = {
   buttonText: string;
   buttonType?: ButtonTypes.button | ButtonTypes.submit | ButtonTypes.reset;
   buttonDisable?: boolean;
@@ -23,7 +23,7 @@ export type ButtonProps = {
   toolTipHint?: string;
 };
 
-export const Button: React.FC<ButtonProps & any> = ({
+export const Button: React.FC<TButtonProps & any> = ({
   buttonText,
   buttonType,
   buttonDisable,
@@ -33,13 +33,36 @@ export const Button: React.FC<ButtonProps & any> = ({
   toolTipHint,
   ...otherProps
 }): JSX.Element => {
+  const [toolTipShown, setToolTipShown] = React.useState<boolean>(false);
+  const mouseEnterHandler = (): void => {
+    if (toolTip) {
+      setTimeout(() => {
+        setToolTipShown(true);
+      }, 1000);
+    }
+    return;
+  };
+
+  const mouseLeaveHandler = (): void => {
+    if (toolTipShown) {
+      setToolTipShown(false);
+    }
+    return;
+  };
+
   return (
     <>
-      {toolTip && <span className="btn-tooltip">{toolTipHint}</span>}
+      {toolTip && toolTipShown && (
+        <span className="btn-tooltip" role="tooltip" aria-hidden="true">
+          {toolTipHint}
+        </span>
+      )}
       <button
         type={buttonType ? buttonType : 'button'}
         disabled={buttonDisable ? true : false}
         className={`react-ui-button ${className}`}
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
         {...otherProps}
       >
         {buttonText}

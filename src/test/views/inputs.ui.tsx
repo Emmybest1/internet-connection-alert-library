@@ -9,7 +9,14 @@ const Inputs: React.FC = (): JSX.Element => {
       <form className="form-container">
         <h2 style={{textAlign: 'center', marginBottom: '32px'}}>Inputs Testing</h2>
         <div className="login-row">
-          <ButtonSearchBar id="searchItems" name="search_item" type="search" placeholder="Search 🍏" />
+          <ButtonSearchBar
+            id="searchItems"
+            name="search_item"
+            type="search"
+            placeholder="Search 🍏"
+            toolTip={true}
+            toolTipHint="You can easily search for users as an admin"
+          />
           <Input id="searchUser" name="search_user" type="search" placeholder="Search 🔦" />
           <Input
             id="email"

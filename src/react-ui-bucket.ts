@@ -1,4 +1,4 @@
-///<reference path="types.d.ts"/>
+///<reference path="react-app-env.d.ts"/>
 /*
  * ui libraries
  */

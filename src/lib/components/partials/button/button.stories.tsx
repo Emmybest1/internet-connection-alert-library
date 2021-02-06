@@ -1,6 +1,6 @@
 import React from 'react';
 import {Story, Meta} from '@storybook/react/types-6-0';
-import {Button, ButtonProps, ButtonClassName} from './button.component';
+import {Button, TButtonProps, ButtonClassName} from './button.component';
 import {storiesHierarchy as h} from '../../../../react-ui-bucket';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta;
 
-const ButtonTemplate: Story<ButtonProps> = (args: ButtonProps) => <Button {...args} />;
+const ButtonTemplate: Story<TButtonProps> = (args: TButtonProps) => <Button {...args} />;
 
 export const SuccessButton = ButtonTemplate.bind({});
 SuccessButton.args = {

@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {Button} from '../../partials/button/button.component';
 import ReactPortal from '../../partials/react-portal/react-portal.component';
-import {APIEngineProps} from '../../../../types';
+import {IAPIEngineProps} from '../../../../react-app-env';
 import '../../../../sass/api-engine.scss';
 
-interface APIErrorEngineProps extends APIEngineProps {
+interface IAPIErrorEngineProps extends IAPIEngineProps {
   retryFuncButtonText?: string;
   retryFunc?: (...args: any) => void | any;
 }
-export const ApiErrorEngine: React.FC<APIErrorEngineProps> = ({
+export const ApiErrorEngine: React.FC<IAPIErrorEngineProps> = ({
   heading,
   message,
   modalPosition,
