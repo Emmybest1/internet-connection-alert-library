@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import * as Lib from './react-ui-bucket';
-import Inputs from './test/view/inputs.ui';
+import Inputs from './test/views/inputs.ui';
 import TestViews from './test';
 import './app.style.scss';
 
