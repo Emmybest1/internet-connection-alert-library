@@ -1,0 +1,27 @@
+main {
+  aside {
+    width: 40%;
+    max-width: 205px;
+    border: solid 1px #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 8px 12px;
+
+    & h3 {
+      border-bottom: solid 1px #eee;
+    }
+    ul {
+      margin-top: 12px;
+      & li {
+        font-size: 0.8em;
+        list-style: none;
+        padding: 4px;
+        & a {
+          color: #1e90ff;
+        }
+      }
+    }
+  }
+}

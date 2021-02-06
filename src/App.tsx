@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import * as Lib from './react-ui-bucket';
 import Inputs from './test/view/inputs.ui';
+import TestViews from './test';
 import './app.style.scss';
 
 const App: React.FC = (): JSX.Element => {
@@ -31,12 +32,14 @@ const App: React.FC = (): JSX.Element => {
   return (
     <Router>
       <Switch>
+        <Route exact path="/" component={TestViews} />
+        <Route exact path="/inputs" component={Inputs} />
         <Route
           exact
-          path="/"
+          path="/modals"
           render={(): JSX.Element => (
             <>
-              <h4>Testing Internet Connection Component </h4>
+              <h4>Modals Test</h4>
               <Lib.InternetAlert />
               <Lib.Loader isLoading={isLoading} />
               <Lib.ApiErrorEngine
@@ -53,10 +56,8 @@ const App: React.FC = (): JSX.Element => {
           )}
         />
 
-        <Route exact path="/inputs-test" component={Inputs} />
-
         <Lib.ProtectedRoute
-          path="/chenue-achebe"
+          path="/protected-route"
           exact={true}
           component={() => <h3>Things fall Apart</h3>}
           shouldRender={false}
