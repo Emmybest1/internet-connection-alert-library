@@ -7,7 +7,9 @@ export default {
   component: Input,
 };
 
-export const SearchInput = () => <Input type="search" id="sxr3383" name="searchContent" placeholder="Search Input" />;
+export const SearchInput = () => (
+  <Input type="search" id="sxr3383" name="searchContent" /*placeholder="Search Input"*/ />
+);
 export const TextInput = () => (
   <Input
     type="text"
@@ -15,7 +17,7 @@ export const TextInput = () => (
     name="firstName"
     regExp={/^[A-z]$/}
     hint="Please the firstName must be written in alphabets"
-    placeholder="Text Input"
+    // placeholder="Text Input"
   />
 );
 export const RadioInput = () => <Input type="radio" id="rar3383" name="codingLanguage" value="Javascript" />;

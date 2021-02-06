@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import {ReactUIBucketProvider, theme} from './react-ui-bucket';
+import {ReactUIBucketProvider} from './react-ui-bucket';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReactUIBucketProvider theme={theme.pinkHigh}>
+    <ReactUIBucketProvider theme="#fff">
       <App />
     </ReactUIBucketProvider>
   </React.StrictMode>,

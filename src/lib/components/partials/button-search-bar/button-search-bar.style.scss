@@ -1,0 +1,27 @@
+.btn-search-bar-container {
+  border-radius: 5px;
+  border: solid 1px #eee;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+
+  & .search-bar {
+    border: 0;
+    margin: 0 !important;
+    padding: 10px;
+    width: 60%;
+  }
+
+  & .search-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    width: 35%;
+    &:hover {
+      opacity: 0.98;
+    }
+  }
+}
