@@ -34,6 +34,7 @@ const App: React.FC = (): JSX.Element => {
       <Switch>
         <Route exact path="/" component={TestViews} />
         <Route exact path="/inputs" component={Inputs} />
+        <Route exact path="/buttons" component={() => <div>Button view is coming soon 🍻</div>} />
         <Route
           exact
           path="/modals"

@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {"id": "xx200", "name": "Test Buttons", "url": "/buttons"},
+    {"id": "xx201", "name": "Test Inputs", "url": "/inputs"},
+    {"id": "xx202", "name": "Test Modals", "url": "/modals"},
+    {"id": "xx203", "name": "Protected Route", "url": "/prot-route"},
+    {"id": "xx204", "name": "Test Others", "url": "/others"}
+  ]
+}
