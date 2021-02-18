@@ -6,7 +6,7 @@ import '../../../../sass/api-engine.scss';
 
 interface IAPIErrorEngineProps extends IAPIEngineProps {
   retryFuncButtonText?: string;
-  retryFunc?: (...args: any) => void | any;
+  retryFunc?: Function | ((...args: any) => void | any);
 }
 export const ApiErrorEngine: React.FC<IAPIErrorEngineProps> = ({
   heading,

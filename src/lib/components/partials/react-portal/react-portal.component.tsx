@@ -13,9 +13,9 @@ export const ReactPortal: React.FC<TReactPortalProps> = ({children}): JSX.Elemen
   divContainer.setAttribute('class', 'modal-container');
 
   useEffect(() => {
-    /**********
+    /***************************************************************************************************************************************
      * immediately the component mount append @divContainer as the childNode of @modalRoot in the DOM
-     **********/
+     ***************************************************************************************************************************************/
     modalRoot!.appendChild(divContainer);
 
     return () => {
@@ -23,9 +23,9 @@ export const ReactPortal: React.FC<TReactPortalProps> = ({children}): JSX.Elemen
     };
   });
 
-  /************
+  /***************************************************************************************************************************************
    * return the createPortal api that takes the children(JSX) and inject it into @divContainer which is already a childNode of @modalRoot
-   ************/
+   ***************************************************************************************************************************************/
   return <>{ReactDOM.createPortal(children, divContainer)}</>;
 };
 

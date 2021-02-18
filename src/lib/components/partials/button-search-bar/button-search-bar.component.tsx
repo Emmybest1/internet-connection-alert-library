@@ -9,10 +9,10 @@ type TButtonSearchBarProps = {
   placeholder: string;
   tooltip?: boolean;
   toolTipHint?: string;
-  onClick: (...arg: any) => any;
+  [x: string]: any;
 };
 
-const ButtonSearchBar: React.FC<TButtonSearchBarProps & any> = ({
+const ButtonSearchBar: React.FC<TButtonSearchBarProps> = ({
   id,
   name,
   placeholder,

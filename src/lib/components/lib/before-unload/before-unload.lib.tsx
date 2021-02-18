@@ -4,12 +4,16 @@ type TBeforeUnloadProps = {
   shouldUnloadPeacefully: boolean;
 };
 
-/***********************
- * @useBeforeUnload this is a hook library used for tracking window exit. use it by putting it inside your functional component at the top level before your custom codes. Please don't put it inside a useEffect again to avoid performance issue.
- * required props: you need to pass in a @boolean value that will be evaluated and if truth it will exit without popup and if false it will throw a browser exit message.
- * Note: i didn't give you the priviledge to pass in a custom message because its redundant and every browser handles their own exit message for pReasons known to the browser engineers.
+/***********************************************************************************************
+ * @useBeforeUnload this is a hook library used for tracking window exit. use it by putting
+ * it inside your functional component at the top level before your custom codes. Please don't
+ * put it inside a useEffect again to avoid performance issue.
+ * required props: you need to pass in a @boolean value that will be evaluated and if truth it
+ * will exit without popup and if false it will throw a browser exit message.
+ * Note: i didn't give you the priviledge to pass in a custom message because its redundant and
+ * every browser handles their own exit message for pReasons known to the browser engineers.
  * usecase: useBeforeUnload(!textChanged?true:false);
- ***********************/
+ ***********************************************************************************************/
 export const useBeforeUnload: React.FC<TBeforeUnloadProps> = ({shouldUnloadPeacefully}): null => {
   React.useEffect(() => {
     let beforeunloadHandler: any;
@@ -29,11 +33,12 @@ export const useBeforeUnload: React.FC<TBeforeUnloadProps> = ({shouldUnloadPeace
   return null;
 };
 
-/*********************
+/***********************************************************************************************
  * @BeforeUnload: this is for class users, same logic applies as above.
- * usecase: call it right after or before your lifecycles but i suggest right after your life cycles because this is basically consuming lifecyles & can be seen as custom life cycle
+ * usecase: call it right after or before your lifecycles but i suggest right after your life
+ * cycles because this is basically consuming lifecyles & can be seen as custom life cycle
  * inoke like this: BeforeUnload(!textChanged?true:false);
- *********************/
+ ***********************************************************************************************/
 export const BeforeUnload = (shouldUnloadPeacefully: boolean) =>
   class BeforeUnloadC extends React.Component {
     beforeUnloadHandler = (ev: BeforeUnloadEvent) => {
