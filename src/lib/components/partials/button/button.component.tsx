@@ -18,12 +18,13 @@ export type TButtonProps = {
   buttonType?: ButtonTypes.button | ButtonTypes.submit | ButtonTypes.reset;
   buttonDisable?: boolean;
   buttonIcon?: React.ReactElement;
-  className?: ButtonClassName.danger | ButtonClassName.warning | ButtonClassName.success;
+  className?: ButtonClassName.danger | ButtonClassName.warning | ButtonClassName.success | string;
   toolTip?: boolean;
   toolTipHint?: string;
+  [x: string]: any;
 };
 
-export const Button: React.FC<TButtonProps & any> = ({
+export const Button: React.FC<TButtonProps> = ({
   buttonText,
   buttonType,
   buttonDisable,

@@ -7,20 +7,18 @@ type TInputProps = {
   info?: React.ReactNode;
   hint?: string;
   label?: string;
-  name: string;
   type: string;
   regExp?: RegExp;
   required?: boolean;
   value?: string;
-  onKeyDown?: (ev: React.KeyboardEvent<HTMLInputElement>) => any;
+  [x: string]: any;
 };
 
-export const Input: React.FC<TInputProps & any> = ({
+export const Input: React.FC<TInputProps> = ({
   id,
   info,
   hint,
   label,
-  name,
   regExp,
   required,
   type,
@@ -34,7 +32,9 @@ export const Input: React.FC<TInputProps & any> = ({
    * Regexp State Updater
    */
   useEffect(() => {
-    regExp && regExp.test(value.toString()) ? setPassedRegExp(true) : setPassedRegExp(false);
+    if (regExp) {
+      regExp.test(value ? value.toString() : '') ? setPassedRegExp(true) : setPassedRegExp(false);
+    }
   }, [value, regExp]);
   return (
     <>
@@ -43,7 +43,6 @@ export const Input: React.FC<TInputProps & any> = ({
         <>
           <textarea
             id={id}
-            name={name}
             cols={10}
             rows={5}
             required={required}
@@ -65,7 +64,10 @@ export const Input: React.FC<TInputProps & any> = ({
            */}
           {!passedRegExp && (
             <span className="input-hint">
-              {hint} <span onClick={() => setShouldOpenInfo(true)}>open info</span>
+              {hint}{' '}
+              <span onClick={() => setShouldOpenInfo(true)} role="button" tabIndex={0}>
+                open info
+              </span>
             </span>
           )}
         </>
@@ -73,7 +75,6 @@ export const Input: React.FC<TInputProps & any> = ({
         <>
           <input
             type={type}
-            name={name}
             aria-label={label}
             required={required}
             value={value}

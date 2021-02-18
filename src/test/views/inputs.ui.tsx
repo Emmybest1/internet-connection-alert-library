@@ -40,7 +40,7 @@ const Inputs: React.FC = (): JSX.Element => {
             info="Pasword should be 10 letters long, should contain at leat 1 Capital letter,special characters and optional numbers"
             hint="wrong input, "
             name="password"
-            regExp={/^s*[A-za-z]*$/}
+            regExp={/^s*[A-za-z]*$/g}
             required={true}
             type="password"
             placeholder="Password"
