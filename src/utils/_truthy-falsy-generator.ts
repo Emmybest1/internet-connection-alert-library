@@ -4,16 +4,16 @@ enum AfricanCountries {
   Egypt = 'Egypt',
 }
 
-enum EuropeanCountries {
-  Estonia = 'Estonia',
-  UK = 'UK',
-  Russia = 'Russia',
-}
-
 enum AsianCountries {
   India = 'India',
   Nepal = 'Nepal',
   China = 'China',
+}
+
+enum EuropeanCountries {
+  Estonia = 'Estonia',
+  UK = 'UK',
+  Russia = 'Russia',
 }
 
 type T_Operations = {

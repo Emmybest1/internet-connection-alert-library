@@ -3,10 +3,9 @@ import {MutableRefObject, useEffect, useRef} from 'react';
 type TUseLocalStorageProps = {
   key: string;
   value: any;
-  invoker?: any;
 };
 
-export const useLocalstorage = ({key, value, invoker}: TUseLocalStorageProps) => {
+export const useLocalstorage = ({key, value}: TUseLocalStorageProps) => {
   let isMounted: MutableRefObject<null | boolean> = useRef<null | boolean>(null);
 
   useEffect(() => {
@@ -28,5 +27,5 @@ export const useLocalstorage = ({key, value, invoker}: TUseLocalStorageProps) =>
     return () => {
       isMounted.current = false;
     };
-  }, [invoker ?? undefined]);
+  }, [key, value]);
 };
