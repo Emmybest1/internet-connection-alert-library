@@ -9,7 +9,7 @@ export {InternetAlert} from './lib/components/lib/internet-alert/internet-alert.
 export {Loader} from './lib/components/lib/loader/loader.lib';
 export {ProtectedRoute} from './lib/components/lib/protected-route/protected-route.lib';
 export {ReactUIBucketProvider} from './lib/components/lib/theme-provider/theme-provider.lib';
-export {useBeforeUnload, BeforeUnload} from './lib/components/lib/before-unload/before-unload.lib';
+export {BeforeUnload} from './lib/components/lib/before-unload/before-unload.lib';
 /*
  * utility libraries
  */
@@ -17,6 +17,12 @@ export {theme} from '../src/utils/_typography';
 export {encode} from './lib/utils/encode/encode.lib';
 export {decode} from './lib/utils/decode/decode.lib';
 export {browser, system} from './lib/utils/platform-info/platform-info.lib';
+
+/*
+ * hooks libraries
+ */
+export {useBeforeUnload} from '../src/lib/hooks/use-beforeunload/use-beforeunload.lib';
+export {useLocalstorage} from '../src/lib/hooks/use-localstorage/use-localstorage.lib';
 
 /*
  * Ts internal utils consumed by libraries and not users: typography,stories hierarchy,truthANdFalsyValue Generator, etc

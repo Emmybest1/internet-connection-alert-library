@@ -37,7 +37,7 @@ export const Inputs: React.FC = (): JSX.Element => {
             id="password"
             autoComplete="off"
             autoCapitalize="off"
-            info="Pasword should be 10 letters long, should contain at leat 1 Capital letter,special characters and optional numbers"
+            info="Pasword should be 10 letters long, should contain at least 1 Capital letter,special characters and optional numbers blah blah blah"
             hint="wrong input, "
             name="password"
             regExp={/^s*[A-za-z]*$/g}

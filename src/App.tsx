@@ -58,7 +58,7 @@ const App: React.FC = (): JSX.Element => {
         />
 
         <Lib.ProtectedRoute
-          path="/protected-route"
+          path="/prot-route"
           exact={true}
           component={() => <h3>Things fall Apart</h3>}
           shouldRender={false}
