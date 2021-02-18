@@ -60,7 +60,7 @@ export const Button: React.FC<TButtonProps> = ({
       )}
       <button
         type={buttonType ? buttonType : 'button'}
-        disabled={buttonDisable ? true : false}
+        disabled={buttonDisable}
         className={`react-ui-button ${className}`}
         onMouseEnter={mouseEnterHandler}
         onMouseLeave={mouseLeaveHandler}

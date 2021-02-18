@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ButtonSearchBar from '../../lib/components/partials/button-search-bar/button-search-bar.component';
 import Input from '../../lib/components/partials/input/input.component';
 
-const Inputs: React.FC = (): JSX.Element => {
+export const Inputs: React.FC = (): JSX.Element => {
   const [loginInfo, setLoginInfo] = useState<{email: string; password: string}>({email: '', password: ''});
   return (
     <main>

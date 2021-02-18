@@ -60,7 +60,7 @@ export const Input: React.FC<TInputProps> = ({
           )}
 
           {/*
-           * this is to be shown when user enters wrong input
+           * this is to be shown when user enters wrong input for textarea types
            */}
           {!passedRegExp && (
             <span className="input-hint">
@@ -91,7 +91,7 @@ export const Input: React.FC<TInputProps> = ({
           )}
 
           {/*
-           * this is to be shown when user enters wrong input
+           * this is to be shown when user enters wrong input for input types
            */}
           {!passedRegExp && type !== 'submit' && type !== 'button' && type !== 'reset' && type !== 'search' && (
             <span className="input-hint">
