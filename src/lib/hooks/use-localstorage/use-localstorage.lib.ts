@@ -11,7 +11,7 @@ export const useLocalstorage = ({key, value}: TUseLocalStorageProps) => {
   useEffect(() => {
     isMounted.current = true;
     if (isMounted) {
-      switch (value) {
+      switch (true) {
         case typeof value !== 'object':
           window.localStorage.setItem(key, value);
           break;

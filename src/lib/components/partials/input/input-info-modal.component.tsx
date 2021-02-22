@@ -13,10 +13,9 @@ const InputInfoModal: React.FC<TInputInfoModalProps> = ({info}): JSX.Element => 
 
   //control the emptiness and updating of infoCopy
   React.useEffect(() => {
-    if (!!info && !shouldShowModal) {
+    if (!!info) {
       setInfoCopy(info);
       setShouldShowModal(true);
-    } else {
     }
     return () => {
       setInfoCopy('');
