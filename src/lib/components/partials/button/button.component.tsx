@@ -35,7 +35,8 @@ export const Button: React.FC<TButtonProps> = ({
   ...otherProps
 }): JSX.Element => {
   const [toolTipShown, setToolTipShown] = React.useState<boolean>(false);
-  const mouseEnterHandler = (): void => {
+  const mouseEnterHandler = (ev: React.MouseEvent<HTMLButtonElement>): void => {
+    ev.stopPropagation();
     if (toolTip) {
       setTimeout(() => {
         setToolTipShown(true);

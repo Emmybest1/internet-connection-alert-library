@@ -7,7 +7,7 @@ const TestViews: React.FC = (): JSX.Element => {
   return (
     <main>
       <aside>
-        <h3>Components</h3>
+        <h3>ReactUIBucket</h3>
         <ul>
           {routes.map((route) => (
             <li key={route.id}>
