@@ -50,6 +50,14 @@ export const Inputs: React.FC = (): JSX.Element => {
             }
           />
 
+          <Input
+            id="nimi32xx"
+            type="text"
+            info="Just testing inline question mark info modal opener 👨🏿‍💻"
+            placeholder="Identification Code"
+            addInfoToInputTag={true}
+          />
+
           <Input id="login" type="submit" name="login" value="LOGIN" />
         </div>
         <div className="register-row"></div>

@@ -4,74 +4,70 @@ form {
   width: 100%;
   padding: 12px;
   font-size: 0.9em;
+}
+i {
+  color: #000;
+}
 
-  & i {
-    color: #000;
+input,
+textarea {
+  background-color: transparent;
+  border: 0;
+  border-bottom: solid 1px #b3b3b3;
+  margin: 12px auto;
+  padding: 8px 0 8px 0;
+  resize: none;
+  width: 100%;
+  &:focus {
+    border-color: #000;
+    box-shadow: none !important;
+    outline: none !important;
   }
 
-  input,
-  textarea {
-    background-color: transparent;
-    border: 0;
-    border-bottom: solid 1px #b3b3b3;
-    margin: 12px auto;
-    padding: 8px 0 8px 0;
-    resize: none;
-    width: 100%;
-    &:focus {
-      border-color: #000;
-      box-shadow: none !important;
-      outline: none !important;
-    }
-
-    &:invalid {
-      box-shadow: none !important;
-      outline: none !important;
-    }
-
-    &::placeholder {
-      color: #333;
-    }
+  &:invalid {
+    box-shadow: none !important;
+    outline: none !important;
   }
 
-  input[type='submit'],
-  input[type='button'] {
-    background-color: #000;
-    border: 0;
-    color: #fff;
-    margin-top: 32px;
-    padding: 12px;
-
-    &:hover {
-      opacity: 0.8;
-    }
+  &::placeholder {
+    color: #333;
   }
+}
 
-  .required-input {
-    color: #ec0909;
-    font-size: 0.7em;
+input[type='submit'],
+input[type='button'] {
+  background-color: #000;
+  border: 0;
+  color: #fff;
+  margin-top: 32px;
+  padding: 12px;
+
+  &:hover {
+    opacity: 0.8;
   }
+}
 
-  .input-hint {
-    border: 0;
-    color: rgb(255, 165, 0);
-    display: block;
-    font-size: 0.7em;
-    padding-top: 8px;
-    width: 100%;
-  }
+.required-input {
+  color: #ec0909;
+  font-size: 0.7em;
+}
 
-  .open-info-btn {
-    color: #1e90ff;
-    cursor: pointer;
-    text-decoration: underline;
+.input-hint {
+  border: 0;
+  color: rgb(255, 165, 0);
+  display: block;
+  font-size: 0.7em;
+  padding-top: 8px;
+  width: 100%;
+}
 
-    &:hover {
-      color: #005fbf;
-    }
-  }
+.open-info-btn {
+  color: #1e90ff;
+  cursor: pointer;
+  text-decoration: underline;
 
-  @media (min-width: 770px) {
+  &:hover {
+    color: #005fbf;
   }
 }
 
@@ -106,4 +102,20 @@ form {
       min-width: 80px;
     }
   }
+}
+
+/*****************************************************************
+ *@styling for input-wrapper aka open input-info with questionmark
+ *****************************************************************/
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  & i {
+    cursor: pointer;
+  }
+}
+
+.input-wrapper--input-questionmark-wrapper {
 }

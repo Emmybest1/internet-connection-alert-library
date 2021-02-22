@@ -8,8 +8,21 @@ type TInputInfoModalProps = {
 };
 
 const InputInfoModal: React.FC<TInputInfoModalProps> = ({info}): JSX.Element => {
-  const [shouldShowModal, setShouldShowModal] = React.useState<boolean>(() => (info ? true : false));
+  const [infoCopy, setInfoCopy] = React.useState<React.ReactNode>('');
+  const [shouldShowModal, setShouldShowModal] = React.useState<boolean>(false);
 
+  //control the emptiness and updating of infoCopy
+  React.useEffect(() => {
+    if (!!info && !shouldShowModal) {
+      setInfoCopy(info);
+      setShouldShowModal(true);
+    } else {
+    }
+    return () => {
+      setInfoCopy('');
+      setShouldShowModal(false);
+    };
+  }, [info]);
   return (
     <>
       {shouldShowModal && (
@@ -21,7 +34,7 @@ const InputInfoModal: React.FC<TInputInfoModalProps> = ({info}): JSX.Element => 
                 Info
               </h4>
             </div>
-            <div className="info-content-wrapper">{info}</div>
+            <div className="info-content-wrapper">{infoCopy}</div>
 
             <div className="ok-btn-wrapper">
               <Button buttonText="Ok" onClick={() => setShouldShowModal(false)} />

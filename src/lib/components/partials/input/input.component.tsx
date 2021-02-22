@@ -5,6 +5,7 @@ import './input.style.scss';
 type TInputProps = {
   id: string;
   info?: React.ReactNode;
+  addInfoToInputTag?: boolean;
   hint?: string;
   label?: string;
   type: string;
@@ -17,11 +18,12 @@ type TInputProps = {
 export const Input: React.FC<TInputProps> = ({
   id,
   info,
+  addInfoToInputTag,
   hint,
   label,
   regExp,
   required,
-  type,
+  type = 'text',
   value,
   ...otherProps
 }): JSX.Element => {
@@ -73,14 +75,33 @@ export const Input: React.FC<TInputProps> = ({
         </>
       ) : (
         <>
-          <input
-            type={type}
-            aria-label={label}
-            required={required}
-            value={value}
-            {...otherProps}
-            aria-required={required ? true : false}
-          />
+          {addInfoToInputTag ? (
+            <span className="input-wrapper input-wrapper--input-questionmark-wrapper">
+              <input
+                type={type}
+                aria-label={label}
+                required={required}
+                value={value}
+                {...otherProps}
+                aria-required={required ? true : false}
+              />
+              <i
+                className="fa fa-question-circle"
+                role="button"
+                tabIndex={0}
+                onClick={() => setShouldOpenInfo(!shouldOpenInfo)}
+              ></i>
+            </span>
+          ) : (
+            <input
+              type={type}
+              aria-label={label}
+              required={required}
+              value={value}
+              {...otherProps}
+              aria-required={required ? true : false}
+            />
+          )}
           {/*
            * this is to be shown at render time for required inputs
            */}
@@ -96,7 +117,7 @@ export const Input: React.FC<TInputProps> = ({
           {!passedRegExp && type !== 'submit' && type !== 'button' && type !== 'reset' && type !== 'search' && (
             <span className="input-hint">
               <i className="fa fa-question-circle"></i> {hint}{' '}
-              <span onClick={() => setShouldOpenInfo(true)} className="open-info-btn" role="button">
+              <span onClick={() => setShouldOpenInfo(!shouldOpenInfo)} role="button" className="open-info-btn">
                 open info
               </span>
             </span>
