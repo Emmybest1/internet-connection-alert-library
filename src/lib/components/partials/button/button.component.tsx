@@ -13,11 +13,18 @@ export enum ButtonClassName {
   success = 'success',
 }
 
+export enum ButtionStructures {
+  border = 'border',
+  curved = 'curved',
+  curvedBorder = 'curved-border',
+}
+
 export type TButtonProps = {
   buttonText: string;
   buttonType?: ButtonTypes.button | ButtonTypes.submit | ButtonTypes.reset;
   buttonDisable?: boolean;
   buttonIcon?: React.ReactElement;
+  buttonStructure?: ButtionStructures.border | ButtionStructures.curved | ButtionStructures.curvedBorder;
   className?: ButtonClassName.danger | ButtonClassName.warning | ButtonClassName.success | string;
   toolTip?: boolean;
   toolTipHint?: string;
@@ -29,6 +36,7 @@ export const Button: React.FC<TButtonProps> = ({
   buttonType,
   buttonDisable,
   buttonIcon,
+  buttonStructure,
   className,
   toolTip,
   toolTipHint,
@@ -65,6 +73,7 @@ export const Button: React.FC<TButtonProps> = ({
         className={`react-ui-button ${className}`}
         onMouseEnter={mouseEnterHandler}
         onMouseLeave={mouseLeaveHandler}
+        data-btn-structure={buttonStructure}
         {...otherProps}
       >
         {buttonText}

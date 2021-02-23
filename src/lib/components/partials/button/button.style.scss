@@ -1,24 +1,27 @@
 button {
-  border: solid 3px #eee;
-  border-radius: 5px;
+  border: 0;
+  border-radius: 0;
   cursor: pointer;
   padding: 8px 12px;
 }
 
 .react-ui-button {
   position: relative;
+
   &:default {
     border: solid 3px #eee;
     border-radius: 5px;
     padding: 8px 12px;
   }
 
-  &:hover {
+  &:disabled {
+    background-color: #5a6268;
+    cursor: not-allowed;
     opacity: 0.7;
   }
 
-  &:disabled {
-    background-color: #5a6268;
+  &:hover {
+    opacity: 0.7;
   }
 }
 
@@ -47,4 +50,20 @@ button {
   top: -40px;
   z-index: 20000;
   width: 100%;
+}
+
+/****************************
+ *@styling button structures
+ ****************************/
+[data-btn-structure='border'] {
+  border: solid 3px #eee;
+}
+
+[data-btn-structure='curved'] {
+  border-radius: 5px;
+}
+
+[data-btn-structure='curved-border'] {
+  border: solid 3px #eee;
+  border-radius: 5px;
 }
