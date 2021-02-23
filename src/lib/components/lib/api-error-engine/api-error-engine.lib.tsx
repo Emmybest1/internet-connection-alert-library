@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button} from '../../partials/button/button.component';
 import ReactPortal from '../../partials/react-portal/react-portal.component';
 import {IAPIEngineProps} from '../../../../react-app-env';
-import '../../../../sass/api-engine.scss';
+import '../../../../sass/_api-engine.scss';
 
 interface IAPIErrorEngineProps extends IAPIEngineProps {
   retryFuncButtonText?: string;

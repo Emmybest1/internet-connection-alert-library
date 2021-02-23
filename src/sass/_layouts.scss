@@ -1,0 +1,47 @@
+@mixin baseLayout($devident) {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  & * {
+    width: inherit/$devident;
+  }
+}
+.layout12 {
+  @include baseLayout(12);
+}
+.layout11 {
+  @include baseLayout(11);
+}
+.layout10 {
+  @include baseLayout(10);
+}
+.layout9 {
+  @include baseLayout(9);
+}
+.layout8 {
+  @include baseLayout(8);
+}
+.layout7 {
+  @include baseLayout(7);
+}
+.layout6 {
+  @include baseLayout(6);
+}
+.layout5 {
+  @include baseLayout(5);
+}
+.layout4 {
+  @include baseLayout(4);
+}
+.layout3 {
+  @include baseLayout(3);
+}
+.layout2 {
+  @include baseLayout(2);
+}
+.layout1 {
+  @include baseLayout(1);
+}
