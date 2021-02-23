@@ -1,10 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import TestViews from './test';
 import * as Lib from './react-ui-bucket';
 import * as Test from './test/export';
-import TestViews from './test';
 import './app.style.scss';
-import Others from './test/views/others.ui';
 
 const App: React.FC = (): JSX.Element => {
   /******************************************************************************
@@ -36,7 +35,7 @@ const App: React.FC = (): JSX.Element => {
         <Route exact path="/" component={TestViews} />
         <Route exact path="/inputs" component={Test.Inputs} />
         <Route exact path="/buttons" component={Test.Buttons} />
-        <Route exact path="/others" component={Others} />
+        <Route exact path="/others" component={Test.Others} />
         <Route
           exact
           path="/modals"

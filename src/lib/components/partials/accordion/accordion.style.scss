@@ -1,0 +1,16 @@
+.accordion-controller {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding: 8px;
+
+  & [role='heading'] {
+    padding-right: 8px;
+  }
+}
+
+.accordion-content {
+  padding-left: 8px;
+  padding-top: 8px;
+}

@@ -31,7 +31,8 @@ export {storiesHierarchy} from '../src/utils/_stories';
 export {_truthyOrFalsyDetector} from './utils/_truthy-falsy-generator';
 
 /*
- * reusable components export
+ * reusable aka partials components export
  */
 export {Input} from './lib/components/partials/input/input.component';
 export {Button} from './lib/components/partials/button/button.component';
+export {Accordion} from './lib/components/partials/accordion/accordion.component';

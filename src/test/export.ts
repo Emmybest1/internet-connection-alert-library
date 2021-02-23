@@ -1,3 +1,4 @@
-export * from './views/inputs.ui';
-export * from './views/modals.ui';
-export * from './views/buttons.ui';
+export * from './lib/inputs.ui';
+export * from './lib/modals.ui';
+export * from './lib/buttons.ui';
+export * from './lib/others.ui';
