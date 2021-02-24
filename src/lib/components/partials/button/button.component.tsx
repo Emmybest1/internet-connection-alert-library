@@ -24,8 +24,9 @@ export type TButtonProps = {
   buttonType?: ButtonTypes.button | ButtonTypes.submit | ButtonTypes.reset;
   buttonDisable?: boolean;
   buttonIcon?: React.ReactElement;
-  buttonStructure?: ButtionStructures.border | ButtionStructures.curved | ButtionStructures.curvedBorder;
+  buttonStructure?: ButtionStructures.border | ButtionStructures.curved | ButtionStructures.curvedBorder | string;
   className?: ButtonClassName.danger | ButtonClassName.warning | ButtonClassName.success | string;
+  children?: React.ReactNode;
   toolTip?: boolean;
   toolTipHint?: string;
   [x: string]: any;
@@ -38,6 +39,7 @@ export const Button: React.FC<TButtonProps> = ({
   buttonIcon,
   buttonStructure,
   className,
+  children,
   toolTip,
   toolTipHint,
   ...otherProps
@@ -79,6 +81,7 @@ export const Button: React.FC<TButtonProps> = ({
         {buttonText}
         {``}
         {buttonIcon && <span>{buttonIcon}</span>}
+        {children}
       </button>
     </>
   );

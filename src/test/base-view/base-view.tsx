@@ -1,15 +1,15 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {routes} from '../data/route.data.json';
-import './index.scss';
+import {routes} from '../../data/route.data.json';
+import '../style.scss';
 
-type TTestViews = {
+type TBaseView = {
   children: React.ReactNode;
 };
 
-const TestViews: React.FC<TTestViews> = ({children}): JSX.Element => {
+const BaseView: React.FC<TBaseView> = ({children}): JSX.Element => {
   return (
-    <main>
+    <main className="base-view-container">
       <aside>
         <span className="logo">
           <h3>ReactUIBucket</h3>
@@ -31,4 +31,4 @@ const TestViews: React.FC<TTestViews> = ({children}): JSX.Element => {
   );
 };
 
-export default TestViews;
+export default BaseView;

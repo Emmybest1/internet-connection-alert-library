@@ -1,0 +1,145 @@
+.base-view-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  & > aside {
+    width: 40%;
+    border: solid 1px #eee;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    height: 100vh;
+    overflow-y: scroll;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      border-bottom: solid 1px #eee;
+      padding: 4px 4px 4px 13px;
+      & h3 {
+        font-size: 1em;
+      }
+      & img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    ul {
+      padding: 8px 12px;
+      & li {
+        font-size: 0.8em;
+        list-style: none;
+        padding: 4px;
+        & a {
+          color: #07071d;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 700px) {
+      width: 15%;
+    }
+  }
+
+  & > .content-wrapper {
+    width: 55%;
+
+    @media (min-width: 700px) {
+      width: 83%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.other-section-wrapper {
+  & > * {
+    border-bottom: solid 1px #eee;
+    margin-bottom: 12px;
+    padding-bottom: 24px;
+
+    & h3 {
+      padding-bottom: 12px;
+    }
+  }
+}
+
+li {
+  font-size: 0.8em;
+  list-style: none;
+}
+
+/**********************************************
+ *@home style
+ **********************************************/
+.home-container {
+  width: 100%;
+
+  & .banner {
+    display: flex;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    background-color: #07071d;
+    border: solid 3px #f2f2f2;
+    border-radius: 10px;
+    height: 400px;
+    max-height: 400px;
+    opacity: 0.9;
+
+    & .banner__content {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      padding: 12px;
+      img {
+        height: 150px;
+        padding-right: 10%;
+      }
+
+      & .banner-content__text-content {
+        color: #fff;
+        text-align: center;
+
+        & p {
+          font-size: 0.9rem;
+        }
+
+        & > * {
+          margin-bottom: 4px;
+        }
+
+        & button {
+          background-color: #fff;
+          margin: 12px auto;
+
+          & > a {
+            color: #000;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-footer {
+  background-color: #07071d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 0.8em;
+  padding: 24px;
+
+  & > * {
+    padding-left: 6px;
+  }
+}

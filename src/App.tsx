@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import TestViews from './test';
 import * as Lib from './react-ui-bucket';
 import * as Test from './test/export';
 import './app.style.scss';
@@ -15,7 +14,7 @@ const App: React.FC = (): JSX.Element => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={TestViews} />
+        <Route exact path="/" component={Test.Home} />
         <Route exact path="/inputs" component={Test.Inputs} />
         <Route exact path="/buttons" component={Test.Buttons} />
         <Route exact path="/others" component={Test.Others} />
