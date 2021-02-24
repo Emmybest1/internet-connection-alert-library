@@ -3,7 +3,11 @@ import {NavLink} from 'react-router-dom';
 import {routes} from '../data/route.data.json';
 import './index.scss';
 
-const TestViews: React.FC = (): JSX.Element => {
+type TTestViews = {
+  children: React.ReactNode;
+};
+
+const TestViews: React.FC<TTestViews> = ({children}): JSX.Element => {
   return (
     <main>
       <aside>
@@ -14,11 +18,15 @@ const TestViews: React.FC = (): JSX.Element => {
         <ul className="items-wrapper">
           {routes.map((route) => (
             <li key={route.id}>
-              <NavLink to={route.url}>{route.name}</NavLink>
+              <NavLink to={route.url} exact>
+                {route.name}
+              </NavLink>
             </li>
           ))}
         </ul>
       </aside>
+
+      <div className="content-wrapper">{children}</div>
     </main>
   );
 };

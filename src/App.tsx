@@ -6,23 +6,6 @@ import * as Test from './test/export';
 import './app.style.scss';
 
 const App: React.FC = (): JSX.Element => {
-  /******************************************************************************
-   * note: the below useState and useEffect is for experimenting the @Lib.Loader
-   ******************************************************************************/
-  const [isLoading, setIsLoading] = React.useState<boolean>(true);
-
-  React.useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-
-    return () => {
-      window.clearTimeout(timeout);
-    };
-  }, []);
-
   /*
    *testing system and browser info util
    */
@@ -31,33 +14,12 @@ const App: React.FC = (): JSX.Element => {
 
   return (
     <Router>
-      {/* <BreadCrumbs /> */}
       <Switch>
         <Route exact path="/" component={TestViews} />
         <Route exact path="/inputs" component={Test.Inputs} />
         <Route exact path="/buttons" component={Test.Buttons} />
         <Route exact path="/others" component={Test.Others} />
-        <Route
-          exact
-          path="/modals"
-          render={(): JSX.Element => (
-            <>
-              <h4>Modals Test</h4>
-              <Lib.InternetAlert />
-              <Lib.Loader isLoading={isLoading} />
-              <Lib.ApiErrorEngine
-                shouldShowModal={true}
-                heading="We are sorry!"
-                message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-              />
-              <Lib.ApiSuccessEngine
-                shouldShowModal={true}
-                heading="Its a Success!"
-                message="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur nisi aspernatur exercitationem autem!"
-              />
-            </>
-          )}
-        />
+        <Route exact path="/modals" component={Test.Modals} />
 
         <Lib.ProtectedRoute
           path="/prot-route"

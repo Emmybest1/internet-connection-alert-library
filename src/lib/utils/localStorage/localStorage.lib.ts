@@ -10,8 +10,6 @@
  * state automatically.
  *******************************************************************************************************************************************/
 
-import {type} from 'os';
-
 const localStorage = (key?: string, stateDispatcher?: Function | ((newVal: any) => {})) => ({
   set(key: string, value: any): void {
     switch (true) {
