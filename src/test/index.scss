@@ -42,8 +42,14 @@ main {
 }
 
 .other-section-wrapper {
-  & * {
+  & > * {
     margin-bottom: 12px;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 24px;
+
+    & h3 {
+      padding-bottom: 12px;
+    }
   }
 }
 

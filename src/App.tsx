@@ -31,6 +31,7 @@ const App: React.FC = (): JSX.Element => {
 
   return (
     <Router>
+      {/* <BreadCrumbs /> */}
       <Switch>
         <Route exact path="/" component={TestViews} />
         <Route exact path="/inputs" component={Test.Inputs} />

@@ -17,6 +17,7 @@ export {theme} from '../src/utils/_typography';
 export {encode} from './lib/utils/encode/encode.lib';
 export {decode} from './lib/utils/decode/decode.lib';
 export {browser, system} from './lib/utils/platform-info/platform-info.lib';
+export {_localStorage} from './lib/utils/localStorage/localStorage.lib';
 
 /*
  * hooks libraries

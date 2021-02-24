@@ -17,7 +17,9 @@ export const Accordion: React.FC<TAccordionProps> = ({children, accordionTitle})
         aria-controls="accordionPanel"
         onClick={() => setAccordionOpened(!accordionOpened)}
       >
-        <span role="heading">{accordionTitle}</span>
+        <span role="heading" aria-level={3}>
+          {accordionTitle}
+        </span>
         {!accordionOpened ? (
           <i className="fa fa-angle-up arrow-up"></i>
         ) : (
@@ -25,7 +27,7 @@ export const Accordion: React.FC<TAccordionProps> = ({children, accordionTitle})
         )}
       </span>
 
-      {/* content view */}
+      {/* accordion content*/}
       {accordionOpened && (
         <div className="accordion-content" aria-expanded={accordionOpened ? true : false} id="accordionPanel">
           {children}
