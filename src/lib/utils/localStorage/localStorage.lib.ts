@@ -57,5 +57,5 @@ const localStorage = (key?: string, stateDispatcher?: Function | ((newVal: any) 
 export const _localStorage = localStorage();
 /****************************************************************************
  * @useCase then ones the updateState util is done, this will be its useCase
- * _localStorage("name",setName)
+ * _localStorage.updateState("name",setName)
  ****************************************************************************/
