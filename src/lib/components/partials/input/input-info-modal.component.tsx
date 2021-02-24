@@ -29,7 +29,7 @@ const InputInfoModal: React.FC<TInputInfoModalProps> = ({info}): JSX.Element => 
           <div className="input-info-modal-container modal-top">
             <div className="info-heading-wrapper">
               <h4 style={{display: 'flex', alignItems: 'center'}}>
-                <i className="fa fa-info-circle" style={{paddingRight: '5px'}}></i>
+                <i className="fa fa-info-circle fa-info-circle--white" style={{paddingRight: '5px'}}></i>
                 Info
               </h4>
             </div>
