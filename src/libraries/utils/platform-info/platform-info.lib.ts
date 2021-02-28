@@ -14,7 +14,7 @@ export const _system = () => {
   const version: string = _derivedSystemInfo[0];
 
   return {
-    os,
+    os: os.replace(/\(|\)/gi, ''),
     version,
   };
 };
