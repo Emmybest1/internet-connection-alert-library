@@ -16,13 +16,17 @@ export enum EuropeanCountries {
   Russia = 'Russia',
 }
 
-type TOperations = {
+export type TOperations = {
   isAfricanCountry: boolean;
   isAsianCountry: boolean;
   isEuropeanCountry: boolean;
 };
 
-const countryEvaluator = (africanCountry: string, asianCountry: string, europeanCountry: string): TOperations => {
+export const countryEvaluator = (
+  africanCountry: string,
+  asianCountry: string,
+  europeanCountry: string
+): TOperations => {
   return {
     isAfricanCountry:
       africanCountry === AfricanCountries.Nigeria ||
@@ -49,10 +53,12 @@ const result = Object.create(
   countryEvaluator(AfricanCountries.Nigeria, AsianCountries.India, EuropeanCountries.Estonia)
 );
 
-export const truthyOrFalsyDetector = (): boolean => {
-  if (result.isAfricanCountry && result.isAsianCountry && result.isEuropeanCountry) {
+export const _truthyOrFalsyDetector = (_condtionalEval: TOperations): boolean => {
+  if (_condtionalEval.isAfricanCountry && _condtionalEval.isAsianCountry && _condtionalEval.isEuropeanCountry) {
     return true;
   }
 
   return false;
 };
+
+export const truthyOrFalsyDetector = () => _truthyOrFalsyDetector(result);
