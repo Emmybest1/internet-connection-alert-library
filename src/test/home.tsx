@@ -17,7 +17,7 @@ export const Home: React.FC = (): JSX.Element => {
 
                 <div className="banner-content__text-content">
                   <h2>Welcome to React UI Library</h2>
-                  <p>A sub-ui-provider of elegant UI Library</p>
+                  <p>A sub-ui-library of elegant UI Library</p>
                   <Button buttonText="" buttonStructure="curved-border">
                     <a href="https://github.com/Emmybest1/react-ui-bucket" target="_blank" rel="noreferrer">
                       Get Started

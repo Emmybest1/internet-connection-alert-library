@@ -1,6 +1,3 @@
-/**************************
- * @resuable sass mixins
- **************************/
 @mixin flex($direction, $alignItems, $alignContent, $justifyContent, $wrap) {
   display: flex;
   flex-direction: $direction;
