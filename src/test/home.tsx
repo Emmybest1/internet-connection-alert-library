@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '../libraries/components/partials/button/button.component';
 import BaseView from './baseview/base-view';
+import {HomeCard} from './home-card';
+import {ourAim} from '../data/our-aim.data.json';
 
 export const Home: React.FC = (): JSX.Element => {
   return (
@@ -27,6 +29,12 @@ export const Home: React.FC = (): JSX.Element => {
               </div>
             </div>
             <div className="banner-overlay banner-overlay--lightgreen"></div>
+
+            <section className="home-card-wraper">
+              {ourAim.map((aim) => (
+                <HomeCard key={aim.id} {...aim} />
+              ))}
+            </section>
           </div>
         }
       />

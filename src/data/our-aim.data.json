@@ -1,0 +1,22 @@
+{
+  "ourAim": [
+    {
+      "id": "aim001",
+      "heading": "Grow the Web",
+      "body": "One of our major aim and vision is to grow the web symbiotically across the browsers.",
+      "imgSrc": "plant.svg"
+    },
+    {
+      "id": "aim002",
+      "heading": "Enrich the UX",
+      "body": "Provide a highly accessible and user first elegant UIs.",
+      "imgSrc": "finace-img.svg"
+    },
+    {
+      "id": "aim003",
+      "heading": "For Free",
+      "body": "Delivering to you for free as an npm.",
+      "imgSrc": "free-delivery.svg"
+    }
+  ]
+}

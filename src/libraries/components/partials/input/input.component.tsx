@@ -4,11 +4,11 @@ import './input.style.scss';
 
 type TInputProps = {
   id: string;
+  labelText?: string;
   info?: React.ReactNode;
   addInfoToInputTag?: boolean;
   hint?: string;
-  label?: string;
-  type: string;
+  type?: string;
   regExp?: RegExp;
   required?: boolean;
   value?: string;
@@ -20,7 +20,7 @@ export const Input: React.FC<TInputProps> = ({
   info,
   addInfoToInputTag,
   hint,
-  label,
+  labelText,
   regExp,
   required,
   type = 'text',
@@ -40,7 +40,7 @@ export const Input: React.FC<TInputProps> = ({
   }, [value, regExp]);
   return (
     <>
-      {label && <label htmlFor={id}>{label}</label>}
+      {labelText && <label htmlFor={id}>{labelText}</label>}
       {type === 'textarea' ? (
         <>
           <textarea
@@ -48,7 +48,9 @@ export const Input: React.FC<TInputProps> = ({
             cols={10}
             rows={5}
             required={required}
+            aria-label={labelText}
             aria-required={required ? true : false}
+            data-testid="txtArea"
             {...otherProps}
           ></textarea>
 
@@ -79,11 +81,12 @@ export const Input: React.FC<TInputProps> = ({
             <span className="input-wrapper input-wrapper--input-questionmark-wrapper">
               <input
                 type={type}
-                aria-label={label}
+                aria-label={labelText}
                 required={required}
-                value={value}
-                {...otherProps}
                 aria-required={required ? true : false}
+                value={value}
+                data-datatid="input"
+                {...otherProps}
               />
               <i
                 className="fa fa-question-circle"
@@ -95,11 +98,12 @@ export const Input: React.FC<TInputProps> = ({
           ) : (
             <input
               type={type}
-              aria-label={label}
+              aria-label={labelText}
               required={required}
-              value={value}
-              {...otherProps}
               aria-required={required ? true : false}
+              value={value}
+              data-datatid="input"
+              {...otherProps}
             />
           )}
           {/*
