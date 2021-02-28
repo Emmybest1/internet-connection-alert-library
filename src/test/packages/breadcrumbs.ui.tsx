@@ -1,5 +1,5 @@
 import React from 'react';
-import BreadCrumbs from '../../lib/components/partials/breadcrumbs/breadcrumbs.component';
+import BreadCrumbs from '../../libraries/components/partials/breadcrumbs/breadcrumbs.component';
 
 const Breadcrumbs = () => <BreadCrumbs />;
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import TestViews from '../baseview/base-view';
-import ButtonSearchBar from '../../lib/components/partials/button-search-bar/button-search-bar.component';
-import Input from '../../lib/components/partials/input/input.component';
+import ButtonSearchBar from '../../libraries/components/partials/button-search-bar/button-search-bar.component';
+import Input from '../../libraries/components/partials/input/input.component';
 
 export const Inputs: React.FC = (): JSX.Element => {
   const [loginInfo, setLoginInfo] = useState<{email: string; password: string}>({email: '', password: ''});
