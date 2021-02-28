@@ -1,8 +1,7 @@
-import React from 'react';
-import {render, screen} from '@testing-library/react';
+import {encode} from './encode.lib';
 
 describe('Test for encode function', () => {
-  test('should...', () => {
-    expect(2 + 2).toBe(4);
+  test('should return encoded string and pass', () => {
+    expect(encode('test test test')).toContain('%');
   });
 });
