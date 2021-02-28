@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import TestViews from '../base-view/base-view';
+import TestViews from '../baseview/base-view';
 import ButtonSearchBar from '../../lib/components/partials/button-search-bar/button-search-bar.component';
 import Input from '../../lib/components/partials/input/input.component';
 

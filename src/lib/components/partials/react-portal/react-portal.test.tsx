@@ -19,7 +19,5 @@ describe('ModalPortlet component unit test', () => {
   it('should test that divContainer elementNode was injected into the DOM as a grand childNode of the body elementNode', () => {
     const modalContainer = document.querySelector('#modal-root .modal-container');
     expect(modalContainer).toBeTruthy;
-
-    console.log(wrapper);
   });
 });

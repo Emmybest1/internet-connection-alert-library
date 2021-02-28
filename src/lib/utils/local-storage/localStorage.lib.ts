@@ -5,8 +5,8 @@
  * And also use the get method when you are tring to retrieve data from localStorage.
  * @Note the get method handles stringified data already
  * @Future_Update note i used a function and not an object literal, thats because i am thinking of building a util that will simultaneosly
- * save data to localStorage and give user the ability to pass in the key,vand their state name whihc they want the saved data to be stored 
- * to and this util will simultaneously save to localStorage and if user gave the permission to refill their state, then we will refill their 
+ * save data to localStorage and give user the ability to pass in the key,vand their state name whihc they want the saved data to be stored
+ * to and this util will simultaneously save to localStorage and if user gave the permission to refill their state, then we will refill their
  * state automatically.
  *******************************************************************************************************************************************/
 

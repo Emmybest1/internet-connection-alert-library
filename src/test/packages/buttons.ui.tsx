@@ -1,5 +1,5 @@
 import React from 'react';
-import TestViews from '../base-view/base-view';
+import TestViews from '../baseview/base-view';
 import {Button, ButtonClassName, ButtionStructures} from '../../lib/components/partials/button/button.component';
 
 export const Buttons: React.FC = (): JSX.Element => {

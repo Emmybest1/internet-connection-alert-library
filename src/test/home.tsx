@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../lib/components/partials/button/button.component';
-import BaseView from './base-view/base-view';
+import BaseView from './baseview/base-view';
 
 export const Home: React.FC = (): JSX.Element => {
   return (

@@ -1,28 +1,28 @@
-enum AfricanCountries {
+export enum AfricanCountries {
   Nigeria = 'Nigeria',
   Kenya = 'Kenya',
   Egypt = 'Egypt',
 }
 
-enum AsianCountries {
+export enum AsianCountries {
   India = 'India',
   Nepal = 'Nepal',
   China = 'China',
 }
 
-enum EuropeanCountries {
+export enum EuropeanCountries {
   Estonia = 'Estonia',
   UK = 'UK',
   Russia = 'Russia',
 }
 
-type T_Operations = {
+type TOperations = {
   isAfricanCountry: boolean;
   isAsianCountry: boolean;
   isEuropeanCountry: boolean;
 };
 
-const _countryEvaluator = (africanCountry: string, asianCountry: string, europeanCountry: string): T_Operations => {
+const countryEvaluator = (africanCountry: string, asianCountry: string, europeanCountry: string): TOperations => {
   return {
     isAfricanCountry:
       africanCountry === AfricanCountries.Nigeria ||
@@ -46,10 +46,10 @@ const _countryEvaluator = (africanCountry: string, asianCountry: string, europea
 };
 
 const result = Object.create(
-  _countryEvaluator(AfricanCountries.Nigeria, AsianCountries.India, EuropeanCountries.Estonia)
+  countryEvaluator(AfricanCountries.Nigeria, AsianCountries.India, EuropeanCountries.Estonia)
 );
 
-export const _truthyOrFalsyDetector = (): boolean => {
+export const truthyOrFalsyDetector = (): boolean => {
   if (result.isAfricanCountry && result.isAsianCountry && result.isEuropeanCountry) {
     return true;
   }

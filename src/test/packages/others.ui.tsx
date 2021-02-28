@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import TestViews from '../base-view/base-view';
+import TestViews from '../baseview/base-view';
 import Button from '../../lib/components/partials/button/button.component';
 import {Accordion} from '../../react-ui-bucket';
 import {_localStorage} from '../../react-ui-bucket';

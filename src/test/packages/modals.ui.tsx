@@ -1,5 +1,5 @@
 import React from 'react';
-import TestViews from '../base-view/base-view';
+import TestViews from '../baseview/base-view';
 import * as Lib from '../../react-ui-bucket';
 
 export const Modals: React.FC = (): JSX.Element => {
