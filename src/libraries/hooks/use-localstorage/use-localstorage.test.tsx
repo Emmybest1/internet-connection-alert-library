@@ -6,7 +6,7 @@ const renderUserLocalStorage = (key: string = 'name', value: string | any = 'Emm
   const {result} = renderHook(() => useLocalStorage({key, value}));
   return result;
 };
-describe('<useLocalStorage/>', () => {
+describe('Test for useLocalStorage hook', () => {
   afterAll(() => {
     window.localStorage.clear();
   });
