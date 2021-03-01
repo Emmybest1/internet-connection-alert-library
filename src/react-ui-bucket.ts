@@ -23,7 +23,7 @@ export {_localStorage} from './libraries/utils/local-storage/localStorage.lib';
  * hooks libraries
  */
 export {useBeforeUnload} from './libraries/hooks/use-beforeunload/use-beforeunload.lib';
-export {useLocalstorage} from './libraries/hooks/use-localstorage/use-localstorage.lib';
+export {useLocalStorage} from './libraries/hooks/use-localstorage/use-localstorage.lib';
 
 /*
  * Ts internal utils consumed by libraries and not users: typography,stories hierarchy,truthANdFalsyValue Generator, etc

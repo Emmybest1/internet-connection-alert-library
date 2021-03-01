@@ -5,7 +5,7 @@ type TUseLocalStorageProps = {
   value: any;
 };
 
-export const useLocalstorage = ({key, value}: TUseLocalStorageProps) => {
+export const useLocalStorage = ({key, value}: TUseLocalStorageProps) => {
   let isMounted: MutableRefObject<null | boolean> = useRef<null | boolean>(null);
 
   useEffect(() => {
