@@ -36,4 +36,4 @@ export {truthyOrFalsyDetector} from './utils/boolean-generator/__booleanGenerato
  */
 export {Input} from './libraries/components/partials/input/input.component';
 export {Button} from './libraries/components/partials/button/button.component';
-export {Accordion} from './libraries/components/partials/accordion/accordion.component';
+export {Accordion} from './libraries/components/packages/accordion/accordion.component';
