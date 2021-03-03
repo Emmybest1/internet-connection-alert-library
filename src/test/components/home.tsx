@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../libraries/components/partials/button/button.component';
-import BaseView from './baseview/base-view';
+import Button from '../../libraries/components/partials/button/button.component';
+import BaseView from '../baseview/base-view';
 import {HomeCard} from './home-card';
-import {ourAim} from '../data/our-aim.data.json';
+import {ourAim} from '../../data/our-aim.data.json';
 
 export const Home: React.FC = (): JSX.Element => {
   return (

@@ -12,7 +12,7 @@ type TButtonSearchBarProps = {
   [x: string]: any;
 };
 
-const ButtonSearchBar: React.FC<TButtonSearchBarProps> = ({
+export const ButtonSearchBar: React.FC<TButtonSearchBarProps> = ({
   id,
   name,
   placeholder,

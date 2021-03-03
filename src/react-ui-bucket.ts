@@ -1,17 +1,20 @@
 ///<reference path="react-app-env.d.ts"/>
 /*
- * ui libraries
+ * ui packages
  */
+export {Accordion} from './libraries/components/packages/accordion/accordion.component';
 export {ApiErrorEngine} from './libraries/components/packages/api-error-engine/api-error-engine.lib';
 export {ApiSuccessEngine} from './libraries/components/packages/api-sucess-engine/api-success-engine.lib';
+export {BeforeUnload} from './libraries/components/packages/before-unload/before-unload.lib';
+export {Combobox} from './libraries/components/packages/combobox/combobox.lib';
 export {FallBackEngine} from './libraries/components/packages/fallback-engine/fallback-engine.lib';
 export {InternetAlert} from './libraries/components/packages/internet-alert/internet-alert.lib';
 export {Loader} from './libraries/components/packages/loader/loader.lib';
 export {ProtectedRoute} from './libraries/components/packages/protected-route/protected-route.lib';
 export {ReactUIBucketProvider} from './libraries/components/packages/theme-provider/theme-provider.lib';
-export {BeforeUnload} from './libraries/components/packages/before-unload/before-unload.lib';
+
 /*
- * utility libraries
+ * utility packages
  */
 export {theme} from './utils/typography/__typography';
 export {encode} from './libraries/utils/encode/encode.lib';
@@ -20,7 +23,7 @@ export {browser, system} from './libraries/utils/platform-info/platform-info.lib
 export {_localStorage} from './libraries/utils/local-storage/localStorage.lib';
 
 /*
- * hooks libraries
+ * hooks packages
  */
 export {useBeforeUnload} from './libraries/hooks/use-beforeunload/use-beforeunload.lib';
 export {useLocalStorage} from './libraries/hooks/use-localstorage/use-localstorage.lib';
@@ -36,4 +39,5 @@ export {truthyOrFalsyDetector} from './utils/boolean-generator/__booleanGenerato
  */
 export {Input} from './libraries/components/partials/input/input.component';
 export {Button} from './libraries/components/partials/button/button.component';
-export {Accordion} from './libraries/components/packages/accordion/accordion.component';
+export {ButtonSearchBar} from './libraries/components/partials/button-search-bar/button-search-bar.component';
+export {ReactPortal} from './libraries/components/partials/react-portal/react-portal.component';

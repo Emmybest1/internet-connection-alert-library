@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
+import TestRoute from './test/route/route';
 import * as Lib from './react-ui-bucket';
-import * as Test from './test/export';
 import './app.style.scss';
 
 const App: React.FC = (): JSX.Element => {
@@ -14,19 +14,7 @@ const App: React.FC = (): JSX.Element => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Test.Home} />
-        <Route exact path="/inputs" component={Test.Inputs} />
-        <Route exact path="/buttons" component={Test.Buttons} />
-        <Route exact path="/others" component={Test.Others} />
-        <Route exact path="/modals" component={Test.Modals} />
-
-        <Lib.ProtectedRoute
-          path="/prot-route"
-          exact={true}
-          component={() => <h3>Things fall Apart</h3>}
-          shouldRender={false}
-          fallBackPath="/"
-        />
+        <TestRoute />
       </Switch>
     </Router>
   );

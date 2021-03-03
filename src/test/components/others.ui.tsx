@@ -3,6 +3,7 @@ import TestViews from '../baseview/base-view';
 import Button from '../../libraries/components/partials/button/button.component';
 import {Accordion} from '../../react-ui-bucket';
 import {_localStorage} from '../../react-ui-bucket';
+import Combobox from '../../libraries/components/packages/combobox/combobox.lib';
 
 const STATIC_ACCORDION_CHILDREN: React.ReactNode = (
   <ul>
@@ -11,6 +12,24 @@ const STATIC_ACCORDION_CHILDREN: React.ReactNode = (
     <li>Javascript</li>
   </ul>
 );
+
+const PROGRAMMING_LANGUAGES = [
+  {
+    id: 'xx001',
+    name: 'javascript',
+    value: 'JavaScript',
+  },
+  {
+    id: 'xx002',
+    name: 'java',
+    value: 'Java',
+  },
+  {
+    id: 'xx003',
+    name: 'python',
+    value: 'Python',
+  },
+];
 
 export const Others: React.FC = (): JSX.Element => {
   const [randomText] = useState<React.ReactNode>(() => _localStorage.get('randomText') ?? null);
@@ -53,6 +72,11 @@ export const Others: React.FC = (): JSX.Element => {
             <section>
               <h3>Accordion Test Below</h3>
               {<Accordion accordionTitle="Random text" children={STATIC_ACCORDION_CHILDREN} />}
+            </section>
+
+            <section>
+              <h3>Combobox Test Below</h3>
+              <Combobox itemType="Programming languages" items={PROGRAMMING_LANGUAGES} />
             </section>
           </div>
         </>
