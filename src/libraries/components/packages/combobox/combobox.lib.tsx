@@ -1,26 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import {useUniqueIds} from '../../../../hooks/useUniqueIds';
 import Input from '../../partials/input/input.component';
+import {IComboboxItem} from '../../../../react-app-env';
 import './combobox.style.scss';
-
-interface IItem {
-  id: string | number;
-  name?: string;
-  value: string;
-}
 
 type TComboboxProps = {
   itemType: string; //itemType e.g fruits or countries
-  items: IItem[];
-  itemClickHandler?: Function | ((item: IItem, searchedKeyword: string) => void | any);
+  items: IComboboxItem[];
+  itemClickHandler?: Function | ((item: IComboboxItem, searchedKeyword: string) => void | any);
 };
 
 export const Combobox: React.FC<TComboboxProps> = ({itemType, items, itemClickHandler}): JSX.Element => {
   const [comboInputId] = useUniqueIds(1);
   const [searchedKeyword, setSearchedKeyword] = useState<string>('');
   const [isAriaExpanded, setIsAriaExpanded] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<string>('');
 
-  //update isAriaExpanded
   useEffect(() => {
     !!searchedKeyword ? setIsAriaExpanded(true) : setIsAriaExpanded(false);
   }, [searchedKeyword]);
@@ -32,7 +27,7 @@ export const Combobox: React.FC<TComboboxProps> = ({itemType, items, itemClickHa
       aria-owns="combobox-listbox"
       aria-haspopup="listbox"
     >
-      <span>
+      <span className="combobox__input-wrapper" tabIndex={0}>
         <Input
           type="text"
           id={comboInputId}
@@ -40,18 +35,30 @@ export const Combobox: React.FC<TComboboxProps> = ({itemType, items, itemClickHa
           aria-autocomplete="list"
           aria-controls="combobox-listbox"
           className="combobox--input"
-          onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setSearchedKeyword(ev.target.value)}
+          value={selectedItem}
+          onChange={(ev: React.ChangeEvent<HTMLInputElement>) => {
+            setSearchedKeyword(ev.target.value);
+            setSelectedItem(ev.target.value);
+          }}
         />
-        <i className="fal fa-angle-down"></i>
+        <span onClick={() => setIsAriaExpanded(!isAriaExpanded)} className="combobox-listbox-expander-btn">
+          <i className="fa fa-angle-down"></i>
+        </span>
       </span>
 
-      {!!searchedKeyword && (
+      {isAriaExpanded && (
         <ul aria-label={`collection of ${itemType}`} role="listbox" id="combobox-listbox" className="combobox--listbox">
           {items.map((item) => (
             <li
               key={item.id}
-              onClick={() => itemClickHandler && itemClickHandler(item, searchedKeyword)}
-              className={`list-item list-item--${item.value.includes(searchedKeyword) ? 'green' : ''}`}
+              onClick={() => {
+                itemClickHandler && itemClickHandler(item, searchedKeyword);
+                setSelectedItem(item.value);
+                setIsAriaExpanded(false);
+              }}
+              className={`list-item list-item--${
+                item.value.toLowerCase().trim().includes(searchedKeyword.toLowerCase()) ? 'green' : ''
+              }`}
             >
               {item.value}
             </li>

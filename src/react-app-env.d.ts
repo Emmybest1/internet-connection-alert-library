@@ -14,3 +14,10 @@ export interface IAPIEngineProps extends IBaseComponentsProps {
   modalPosition?: ModalPosition.top | ModalPosition.bottom | ModalPosition.right | ModalPosition.left;
   shouldShowModal: boolean;
 }
+
+//combobox Item data type-system
+export interface IComboboxItem {
+  id: string | number;
+  name?: string;
+  value: string;
+}

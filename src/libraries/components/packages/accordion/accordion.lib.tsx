@@ -7,6 +7,7 @@ type TAccordionProps = {
 };
 export const Accordion: React.FC<TAccordionProps> = ({children, accordionTitle}): JSX.Element => {
   const [accordionOpened, setAccordionOpened] = useState<boolean>(false);
+
   return (
     <div role="region">
       {/* accordion controllers */}

@@ -4,6 +4,7 @@ import Button from '../../libraries/components/partials/button/button.component'
 import {Accordion} from '../../react-ui-bucket';
 import {_localStorage} from '../../react-ui-bucket';
 import Combobox from '../../libraries/components/packages/combobox/combobox.lib';
+import {IComboboxItem} from '../../react-app-env';
 
 const STATIC_ACCORDION_CHILDREN: React.ReactNode = (
   <ul>
@@ -76,7 +77,13 @@ export const Others: React.FC = (): JSX.Element => {
 
             <section>
               <h3>Combobox Test Below</h3>
-              <Combobox itemType="Programming languages" items={PROGRAMMING_LANGUAGES} />
+              <Combobox
+                itemType="Programming languages"
+                items={PROGRAMMING_LANGUAGES}
+                itemClickHandler={(item: IComboboxItem) => {
+                  console.log('Item is', item);
+                }}
+              />
             </section>
           </div>
         </>

@@ -2,7 +2,7 @@
 /*
  * ui packages
  */
-export {Accordion} from './libraries/components/packages/accordion/accordion.component';
+export {Accordion} from './libraries/components/packages/accordion/accordion.lib';
 export {ApiErrorEngine} from './libraries/components/packages/api-error-engine/api-error-engine.lib';
 export {ApiSuccessEngine} from './libraries/components/packages/api-sucess-engine/api-success-engine.lib';
 export {BeforeUnload} from './libraries/components/packages/before-unload/before-unload.lib';
