@@ -20,4 +20,5 @@ export interface IComboboxItem {
   id: string | number;
   name?: string;
   value: string;
+  [x: string]: any;
 }
