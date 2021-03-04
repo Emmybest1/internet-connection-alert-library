@@ -135,23 +135,30 @@ li {
 
         & p {
           font-size: 0.9rem;
+          margin-bottom: 20px;
         }
 
         & > * {
           margin-bottom: 4px;
         }
 
-        & button {
+        & .get-started-btn {
           background-color: #fff;
+          color: #000;
+          cursor: pointer;
+          font-size: 0.9rem;
           margin: 12px auto;
+          padding: 8px 12px;
+          text-decoration: none;
+
           &:hover {
             opacity: 0.8;
           }
+        }
 
-          & > a {
-            color: #000;
-            text-decoration: none;
-          }
+        & .get-started-btn--curved-border {
+          border: solid 3px #eee;
+          border-radius: 5px;
         }
       }
     }

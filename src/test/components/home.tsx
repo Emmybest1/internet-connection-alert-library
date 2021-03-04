@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../libraries/components/partials/button/button.component';
 import BaseView from '../baseview/base-view';
 import {HomeCard} from './home-card';
 import {ourAim} from '../../data/our-aim.data.json';
@@ -20,11 +19,15 @@ export const Home: React.FC = (): JSX.Element => {
                 <div className="banner-content__text-content">
                   <h2>Welcome to React UI Library</h2>
                   <p>A sub-ui-library of elegant UI Library</p>
-                  <Button buttonText="" buttonStructure="curved-border">
-                    <a href="https://github.com/Emmybest1/react-ui-bucket" target="_blank" rel="noreferrer">
-                      Get Started
-                    </a>
-                  </Button>
+
+                  <a
+                    href="https://github.com/Emmybest1/react-ui-bucket"
+                    className="get-started-btn get-started-btn--curved-border"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Get Started
+                  </a>
                 </div>
               </div>
             </div>
