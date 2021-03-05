@@ -4,7 +4,7 @@ import Input from '../../partials/input/input.component';
 import {IComboboxItem} from '../../../../react-app-env';
 import './combobox.style.scss';
 
-type TComboboxProps = {
+export type TComboboxProps = {
   itemType: string; //itemType e.g fruits or countries
   items: IComboboxItem[];
   itemClickHandler?: Function | ((item: IComboboxItem, searchedKeyword: string) => void | any);
@@ -36,12 +36,17 @@ export const Combobox: React.FC<TComboboxProps> = ({itemType, items, itemClickHa
           aria-controls="combobox-listbox"
           className="combobox--input"
           value={selectedItem}
+          data-testid="searchInput"
           onChange={(ev: React.ChangeEvent<HTMLInputElement>) => {
             setSearchedKeyword(ev.target.value);
             setSelectedItem(ev.target.value);
           }}
         />
-        <span onClick={() => setIsAriaExpanded(!isAriaExpanded)} className="combobox-listbox-expander-btn">
+        <span
+          onClick={() => setIsAriaExpanded(!isAriaExpanded)}
+          className="combobox-listbox-expander-btn"
+          data-testid="itemsDropper"
+        >
           <i className="fa fa-angle-down"></i>
         </span>
       </span>
@@ -57,7 +62,7 @@ export const Combobox: React.FC<TComboboxProps> = ({itemType, items, itemClickHa
                 setIsAriaExpanded(false);
               }}
               className={`list-item list-item--${
-                item.value.toLowerCase().trim().includes(searchedKeyword.toLowerCase()) ? 'green' : ''
+                item.value.toLowerCase().trim().includes(searchedKeyword.toLowerCase()) && 'green'
               }`}
             >
               {item.value}

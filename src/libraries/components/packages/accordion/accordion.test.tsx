@@ -1,8 +1,31 @@
-import React from 'react';
 import {render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import {Accordion} from './accordion.lib';
 
 describe('<Accordion/>', () => {
+  const renderAccordion = () => {
+    const {rerender} = render(
+      <Accordion
+        accordionTitle="Pages"
+        children={
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        }
+      />
+    );
+
+    return rerender;
+  };
   test('should render <Accordion/>', () => {
-    expect(2 + 2).toBe(4);
+    renderAccordion();
+  });
+
+  test('should dropdown items', () => {
+    renderAccordion();
+    userEvent.click(screen.getByTestId('accordionController'));
+    expect(screen.getAllByRole('listitem')[0]).toHaveTextContent(/(Home) || (About) || (Contact)/gim);
   });
 });

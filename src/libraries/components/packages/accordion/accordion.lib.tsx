@@ -16,6 +16,7 @@ export const Accordion: React.FC<TAccordionProps> = ({children, accordionTitle})
         role="button"
         tabIndex={0}
         aria-controls="accordionPanel"
+        data-testid="accordionController"
         onClick={() => setAccordionOpened(!accordionOpened)}
       >
         <span role="heading" aria-level={3}>
